@@ -1,0 +1,4 @@
+Name: Back to Forward Slash
+Description: Change backshlash (\) to forward slash (/) for the item in the users clipboard
+Binding: back_to_forward
+Interactive: false
