@@ -6,3 +6,5 @@ Description: This is the realm where the random chunks of code I use will live.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+URL: https://github.com/KoderKow/kowr
+BugReports: https://github.com/KoderKow/kowr/issues
