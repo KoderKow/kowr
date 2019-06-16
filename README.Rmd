@@ -1,0 +1,201 @@
+---
+output: 
+    github_document:
+        df_print: tibble
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+# kowr
+
+<!-- badges: start -->
+[![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+[![made-with-R](https://img.shields.io/badge/Made%20with-R-1f425f.svg)](https://www.r-project.org/)
+[![Travis build status](https://travis-ci.org/KoderKow/kowr.svg?branch=master)](https://travis-ci.org/KoderKow/kowr)
+[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/KoderKow/kowr?branch=master&svg=true)](https://ci.appveyor.com/project/KoderKow/kowr)
+[![Codecov test coverage](https://codecov.io/gh/KoderKow/kowr/branch/master/graph/badge.svg)](https://codecov.io/gh/KoderKow/kowr?branch=master)
+<!-- badges: end -->
+
+This is my package that houses functions I find myself frequently using. I am also using this package to learn about building flexible and robust packages!
+
+The name `kowr` is my nickname, Kow, with my favorite letter, R! This combination makes the package sound like cower, however, I like to think this package does not derive fear :)
+
+## Installation
+
+Download from GitHub:
+
+``` r
+devtools::install_github("KoderKow/kowr")
+```
+
+## Function Examples
+
+### Load the Package
+
+```{r}
+library(kowr)
+```
+
+<hr>
+
+### back_to_forward()
+
+Primarily for Windows users. When copying file paths in Windows it will use a backslash to separate files, this will throw an error in R. The process of manually changing the backslashes to forward slashes can get highly repetitive. The `back_to_forward()` function will take what is in the user's clipboard and paste the path with the wanted forward slashes. There are two approaches to this.
+
+Example file path saved in clipboard: `C:\Documents\Newsletters\Summer2018.csv`
+
+#### Option 1) Run `back_to_forward()` in the Console
+
+Run `back_to_forward()` in the console. This will output a string with forward slashes.
+
+#### Option 2) Attatch `back_to_forward()` to a Hotkey
+
+`back_to_forward()` is also an add-in called `Back to Forward Slash`. In RStudio near the top click `Addins` and you will see the `kowr` package with the add-in. If you click this add-in it will paste the file path wherever your cursor is located within RStudio. This is not the most ideal way to use this. Since backward_to_forward() is an add-in we can assign the add-in `Back to Forward Slash` to a hotkey.
+
+1. Go to `Tools > Modify Keyboard Shortcuts...` in RStudio
+2. Sort by *Name* and find `Back to Forward Slash`
+3. Assign a hotkey to it, on my Mac I used `CMD + /`
+4. Test out the hotkey with the path in your clipboard!
+
+#### Arguments
+
+- `render`: A Logical. Defaults to `TRUE`. Exists primarily for the sake of internal testing.
+
+<hr>
+
+### clear_plotly_options()
+
+Default `plot_ly()` output:
+
+``` r
+p <- plot_ly(data = mtcars, x = ~mpg, y = ~hp, type = "scatter", mode = "markers")
+```
+
+Remove all buttons on top of the plot:
+
+``` r
+p %>% 
+  clean_plotly_options()
+```
+
+Keep "Download plot as a png" button:
+
+``` r
+p %>%
+  clear_plotly_options(buttons_to_keep = "toImage")
+```
+
+Keep "Zoom in" and "Zoom out" buttons:
+
+``` r
+p %>%
+  clear_plotly_options(buttons_to_keep = c("zoomIn2d", "zoomOut2d"))
+```
+
+#### Arguments:
+
+- `plotly_object` A plotly object.
+- `buttons_to_keep` A string. Default is `NULL`. Use a vector of strings for multiple buttons to keep. Below is a list of items with the plotly code that corresponds to the text displayed on the plotly plot when hovering over the buttons.
+  - `toImage`: Download plot as a png
+  - `zoom2d`: Zoom
+  - `pan2d`: Pan
+  - `select2d`: Box Select
+  - `lasso2d`: Lasso Select
+  - `zoomIn2d`: Zoom in
+  - `zoomOut2d`: Zoom out
+  - `autoScale2d`: Autoscale
+  - `resetScale2d`: Reset axes
+  - `toggleSpikelines`: Toggle Spike Lines
+  - `hoverClosestCartesian`: Show closest data on hover
+  - `hoverCompareCartesian`: Compare data on hover
+- `keep_logo` A logical. Default is `FALSE`. Set to `TRUE` to keep the "Produced with Plotly" button located in the top right of the plot.
+
+<hr>
+
+### round_up()
+
+Round whole numbers up. This function will always round up to the number place second to the left:
+
+```{r}
+round_up(x = 123456)
+```
+
+Numbers with only 2 numeric places (tens), then it will round on the tens position value:
+
+```{r}
+round_up(x = 19)
+```
+
+If needed, we can change the value to a dollar amount. Using `as_dollar = TRUE` will change the numeric value to a character:
+
+```{r}
+round_up(x = 1991, format = "dollar")
+```
+
+#### Arguments
+
+- `x` A numeric value.
+- `format` A boolean. Takes three different options to round up and stylize:
+  - `normal`: The default, return the number with no formatting.
+  - `dollar`: Return the number with a leading dollar sign along with commas.
+  - `comma`: Return the number with commas.
+
+<hr>
+
+### snake_to()
+
+This is useful for when the user wants to use the columns in a representative way. Shiny, Power BI, and RMarkdown are use cases where we may want clean column names for the user to read.
+
+I find myself using `stringr::str_to_title()` for a clean way of presenting columns in documents and dashboards. This is the reason the default argument for `snake_to`'s output is "title"
+
+```{r}
+dat <- data.frame(
+  first_column_example = c(1,2,3),
+  second_column_ex = c("a", "b", "c"),
+  thirdColumn_example = c("q", "w", "e")
+)
+
+dat %>%
+  snake_to()
+```
+
+Sentence case:
+
+```{r}
+dat %>%
+  snake_to(format = "sentence")
+```
+
+Title case and keep column names only:
+
+```{r}
+dat %>%
+  snake_to(names_only = TRUE)
+```
+
+#### Arguments
+
+- 'dat' A data.frame. The input data.frame.
+- `format` A string. The desired target (default is "title") case with options including:
+  - `"title"` produces title case
+  - `"lower"` produces lower case
+  - `"normal"` do not transform the string
+  - `"sentence"` produces sentence case
+  - `"upper"` produces upper case
+- `names_only` A Logical. Default `FALSE`. If `TRUE`, `snake_to()` will return a vector of transformed column names.
+
+<hr>
+
+## Thanks To
+
+- Hadley's [R Packages](http://r-pkgs.had.co.nz/) book
+- The [changer](https://github.com/helske/changer) package for the easy name transition from `koderkow` to `kowr`
+- The `c("[clipr](https://github.com/mdlincoln/clipr)", "[datapasta](https://github.com/MilesMcBain/datapasta)", "[reprex](https://github.com/tidyverse/reprex)") packages for testing methods involving clipboards
