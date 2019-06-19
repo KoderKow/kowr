@@ -32,3 +32,8 @@ test_that("forward slash with set text", {
                                render = FALSE),
                "sample/file/path")
 })
+
+test_that("no render", {
+  expect_invisible(back_to_forward(text = "sample/file/path"),
+                   "sample/file/path")
+})
