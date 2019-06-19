@@ -33,7 +33,17 @@ test_that("forward slash with set text", {
                "sample/file/path")
 })
 
-test_that("no render", {
+test_that("default render", {
+  skip_on_cran()
+  withr::local_envvar(c(CLIPR_ALLOW = TRUE))
+  skip_if_not(
+    clipr::clipr_available(),
+    "System clipboard is not available - skipping test."
+  )
+  skip_if_not(
+    rstudioapi::isAvailable(),
+    "RStudio is not available - skipping test."
+  )
   expect_invisible(back_to_forward(text = "sample/file/path"),
                    "sample/file/path")
 })
