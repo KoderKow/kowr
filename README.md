@@ -77,6 +77,9 @@ assign the add-in `Back to Forward Slash` to a hotkey.
 
   - `render`: A Logical. Defaults to `TRUE`. Exists primarily for the
     sake of internal testing.
+  - `text`: A String. Default uses the text in your clipboard. This
+    should not be altered from the default. Exists primarily for the
+    sake of internal testing.
 
 <hr>
 
