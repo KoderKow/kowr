@@ -4,9 +4,11 @@
 \alias{back_to_forward}
 \title{Backslash to Forward Slash}
 \usage{
-back_to_forward(render = TRUE)
+back_to_forward(text = clipr::read_clip(), render = TRUE)
 }
 \arguments{
+\item{text}{A String. Default uses the text in your clipboard. This should not be altered from the default. Exists primarily for the sake of internal testing.}
+
 \item{render}{A Logical. Defaults to `TRUE`. Exists primarily for the sake of internal testing.}
 }
 \value{

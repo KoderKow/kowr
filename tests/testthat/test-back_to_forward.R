@@ -20,3 +20,15 @@ test_that("forward slash (just paste it!)", {
   clipr::write_clip(content = "sample/file/path")
   expect_match(back_to_forward(render = FALSE), "sample/file/path")
 })
+
+test_that("back slash with set text", {
+  expect_match(back_to_forward(text = "sample\\file\\path",
+                               render = FALSE),
+               "sample/file/path")
+})
+
+test_that("forward slash with set text", {
+  expect_match(back_to_forward(text = "sample/file/path",
+                               render = FALSE),
+               "sample/file/path")
+})
