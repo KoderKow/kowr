@@ -1,7 +1,5 @@
 ---
-output: 
-    github_document:
-        df_print: tibble
+output: github_document
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -200,3 +198,4 @@ dat %>%
 - Hadley's [R Packages](http://r-pkgs.had.co.nz/) book
 - The [changer](https://github.com/helske/changer) package for the easy name transition from `koderkow` to `kowr`
 - The `c("[clipr](https://github.com/mdlincoln/clipr)", "[datapasta](https://github.com/MilesMcBain/datapasta)", "[reprex](https://github.com/tidyverse/reprex)") packages for testing methods involving clipboards
+- Big thanks to the user  [jdblischak](https://community.rstudio.com/t/internal-testing-using-clipr-and-testthat-in-terms-of-code-coverage/32872) on RStudio Community for helping the structure of testing `back_to_forward()`

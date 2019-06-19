@@ -194,12 +194,10 @@ dat <- data.frame(
 
 dat %>%
   snake_to()
-#> # A tibble: 3 x 3
-#>   `First Column Example` `Second Column Ex` `Thirdcolumn Example`
-#>                    <dbl> <fct>              <fct>                
-#> 1                      1 a                  q                    
-#> 2                      2 b                  w                    
-#> 3                      3 c                  e
+#>   First Column Example Second Column Ex Thirdcolumn Example
+#> 1                    1                a                   q
+#> 2                    2                b                   w
+#> 3                    3                c                   e
 ```
 
 Sentence case:
@@ -207,12 +205,10 @@ Sentence case:
 ``` r
 dat %>%
   snake_to(format = "sentence")
-#> # A tibble: 3 x 3
-#>   `First column example` `Second column ex` `Thirdcolumn example`
-#>                    <dbl> <fct>              <fct>                
-#> 1                      1 a                  q                    
-#> 2                      2 b                  w                    
-#> 3                      3 c                  e
+#>   First column example Second column ex Thirdcolumn example
+#> 1                    1                a                   q
+#> 2                    2                b                   w
+#> 3                    3                c                   e
 ```
 
 Title case and keep column names only:
@@ -247,3 +243,7 @@ dat %>%
     “[datapasta](https://github.com/MilesMcBain/datapasta)”,
     “[reprex](https://github.com/tidyverse/reprex)”) packages for
     testing methods involving clipboards
+  - Big thanks to the user
+    [jdblischak](https://community.rstudio.com/t/internal-testing-using-clipr-and-testthat-in-terms-of-code-coverage/32872)
+    on RStudio Community for helping the structure of testing
+    `back_to_forward()`
