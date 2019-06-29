@@ -187,17 +187,18 @@ default argument for `snake_to`’s output is “title”
 
 ``` r
 dat <- data.frame(
-  first_column_example = c(1,2,3),
-  second_column_ex = c("a", "b", "c"),
-  thirdColumn_example = c("q", "w", "e")
+  lol_game    = c(1, 2, 3),
+  lollipop    = c("a", "b", "c"),
+  thirdColumn = c("q", "w", "e"),
+  average_dps = c(10, 12, 14)
 )
 
 dat %>%
   snake_to()
-#>   First Column Example Second Column Ex Thirdcolumn Example
-#> 1                    1                a                   q
-#> 2                    2                b                   w
-#> 3                    3                c                   e
+#>   Lol Game Lollipop Thirdcolumn Average Dps
+#> 1        1        a           q          10
+#> 2        2        b           w          12
+#> 3        3        c           e          14
 ```
 
 Sentence case:
@@ -205,10 +206,10 @@ Sentence case:
 ``` r
 dat %>%
   snake_to(format = "sentence")
-#>   First column example Second column ex Thirdcolumn example
-#> 1                    1                a                   q
-#> 2                    2                b                   w
-#> 3                    3                c                   e
+#>   Lol game Lollipop Thirdcolumn Average dps
+#> 1        1        a           q          10
+#> 2        2        b           w          12
+#> 3        3        c           e          14
 ```
 
 Title case and keep column names only:
@@ -216,7 +217,19 @@ Title case and keep column names only:
 ``` r
 dat %>%
   snake_to(names_only = TRUE)
-#> [1] "First Column Example" "Second Column Ex"     "Thirdcolumn Example"
+#> [1] "Lol Game"    "Lollipop"    "Thirdcolumn" "Average Dps"
+```
+
+Title case and capitalize the acronyms
+
+``` r
+acronyms = c("lol", "dps")
+dat %>% 
+  snake_to(acronyms = acronyms)
+#>   LOL Game Lollipop Thirdcolumn Average DPS
+#> 1        1        a           q          10
+#> 2        2        b           w          12
+#> 3        3        c           e          14
 ```
 
 #### Arguments
@@ -229,6 +242,12 @@ dat %>%
       - `"normal"` do not transform the string
       - `"sentence"` produces sentence case
       - `"upper"` produces upper case
+  - `acronyms` A Character. Default `NULL`. For when acronyms exist in
+    the column names that need to be capitalized. Pass a character
+    vector for when there is more than one acronym. Upper and/or lower
+    case acronyms in this parameter will be accepted. This will only
+    capitalize the wanted words, words that may contain the acronyms
+    letter will NOT be capitalized.
   - `names_only` A Logical. Default `FALSE`. If `TRUE`, `snake_to()`
     will return a vector of transformed column names.
 
@@ -237,8 +256,8 @@ dat %>%
 ## Thanks To
 
   - Hadley’s [R Packages](http://r-pkgs.had.co.nz/) book
-  - The [changer](https://github.com/helske/changer) package for the
-    easy name transition from `koderkow` to `kowr`
+  - The [tic](https://github.com/ropenscilabs/tic) package for the
+    easiest package setupever
   - The \`c(“[clipr](https://github.com/mdlincoln/clipr)”,
     “[datapasta](https://github.com/MilesMcBain/datapasta)”,
     “[reprex](https://github.com/tidyverse/reprex)”) packages for

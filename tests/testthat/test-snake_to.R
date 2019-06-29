@@ -1,6 +1,6 @@
 dat <- data.frame(
-  first_column = c(1,2,3),
-  second_column = c("a", "b", "c"),
+  lol_game = c(1,2,3),
+  lollipop = c("a", "b", "c"),
   thirdColumn = c("q", "w", "e")
 )
 
@@ -29,7 +29,7 @@ test_that("to title", {
     snake_to(names_only = TRUE) %>%
     stringr::str_count("[A-Z]") %>%
     sum()
-  expect_equal(title_test, 5)
+  expect_equal(title_test, 4)
 })
 
 test_that("to sentence", {
@@ -53,7 +53,7 @@ test_that("to upper", {
     snake_to(format = "upper", names_only = TRUE) %>%
     stringr::str_count("[A-Z]") %>%
     sum()
-  expect_equal(upper_test, 34)
+  expect_equal(upper_test, 26)
 })
 
 test_that("to normal (no transformation)", {
@@ -66,4 +66,11 @@ test_that("to normal (no transformation)", {
 
 test_that("test for inputing a non-option", {
   expect_error(snake_to(dat, format = "Your mother was a hamster and your father smelt of elderberries."))
+})
+
+test_that("acronyms", {
+  acronym_test <- dat %>%
+    snake_to(format = "normal", acronym = "lol", names_only = TRUE) %>%
+    paste(., collapse = " ")
+  expect_equal(acronym_test, "LOL game lollipop thirdColumn")
 })

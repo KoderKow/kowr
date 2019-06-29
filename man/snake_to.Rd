@@ -4,10 +4,11 @@
 \alias{snake_to}
 \title{Remove Snake Case}
 \usage{
-snake_to(dat, format = "title", names_only = FALSE)
+snake_to(.data, format = "title", acronyms = NULL,
+  names_only = FALSE)
 }
 \arguments{
-\item{dat}{A data.frame. The input data.frame.}
+\item{.data}{A data.frame. The input data.frame.}
 
 \item{format}{A string. The desired target (default is "title") case with options including:
 \itemize{
@@ -17,6 +18,8 @@ snake_to(dat, format = "title", names_only = FALSE)
  \item{`"sentence"` produces sentence case}
  \item{`"upper"` produces upper case}
  }}
+
+\item{acronyms}{A Character. Default `NULL`. For when acronyms exist in the column names that need to be capitalized. Pass a character vector for when there is more than one acronym. Upper and/or lower case acronyms in this parameter will be accepted. This will only capitalize the wanted words, words that may contain the acronyms letter will NOT be capitalized.}
 
 \item{names_only}{A Logical. Default `FALSE`. If `TRUE`, `snake_to()` will return a vector of transformed column names.}
 }
@@ -29,15 +32,20 @@ This is useful for when the user wants to use the columns in a presentitive way.
 \examples{
 \dontrun{
 # snake to title
-dat \%>\%
+.data \%>\%
   snake_to()
 
 # snake to sentence
-dat \%>\%
+.data \%>\%
   snake_to(format = "sentence")
 
 # snake to title, keep vector of transformed column names
-dat \%>\%
+.data \%>\%
   snake_to(names_only = TRUE)
+
+# snake to title, capitalize acronyms
+acronyms <- c("pyr", "cyr")
+.data \%>\%
+  snake_to(acronyms = acronyms)
 }
 }

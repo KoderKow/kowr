@@ -12,6 +12,7 @@ knitr::opts_chunk$set(
   out.width = "100%"
 )
 ```
+
 # kowr
 
 <!-- badges: start -->
@@ -157,9 +158,10 @@ I find myself using `stringr::str_to_title()` for a clean way of presenting colu
 
 ```{r}
 dat <- data.frame(
-  first_column_example = c(1,2,3),
-  second_column_ex = c("a", "b", "c"),
-  thirdColumn_example = c("q", "w", "e")
+  lol_game    = c(1, 2, 3),
+  lollipop    = c("a", "b", "c"),
+  thirdColumn = c("q", "w", "e"),
+  average_dps = c(10, 12, 14)
 )
 
 dat %>%
@@ -180,6 +182,14 @@ dat %>%
   snake_to(names_only = TRUE)
 ```
 
+Title case and capitalize the acronyms
+
+```{r}
+acronyms = c("lol", "dps")
+dat %>% 
+  snake_to(acronyms = acronyms)
+```
+
 #### Arguments
 
 - 'dat' A data.frame. The input data.frame.
@@ -189,6 +199,7 @@ dat %>%
   - `"normal"` do not transform the string
   - `"sentence"` produces sentence case
   - `"upper"` produces upper case
+- `acronyms` A Character. Default `NULL`. For when acronyms exist in the column names that need to be capitalized. Pass a character vector for when there is more than one acronym. Upper and/or lower case acronyms in this parameter will be accepted. This will only capitalize the wanted words, words that may contain the acronyms letter will NOT be capitalized.
 - `names_only` A Logical. Default `FALSE`. If `TRUE`, `snake_to()` will return a vector of transformed column names.
 
 <hr>
@@ -196,6 +207,6 @@ dat %>%
 ## Thanks To
 
 - Hadley's [R Packages](http://r-pkgs.had.co.nz/) book
-- The [changer](https://github.com/helske/changer) package for the easy name transition from `koderkow` to `kowr`
+- The [tic](https://github.com/ropenscilabs/tic) package for the easiest package setupever
 - The `c("[clipr](https://github.com/mdlincoln/clipr)", "[datapasta](https://github.com/MilesMcBain/datapasta)", "[reprex](https://github.com/tidyverse/reprex)") packages for testing methods involving clipboards
 - Big thanks to the user  [jdblischak](https://community.rstudio.com/t/internal-testing-using-clipr-and-testthat-in-terms-of-code-coverage/32872) on RStudio Community for helping the structure of testing `back_to_forward()`
