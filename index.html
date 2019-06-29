@@ -220,28 +220,37 @@
 <p>This is useful for when the user wants to use the columns in a representative way. Shiny, Power BI, and RMarkdown are use cases where we may want clean column names for the user to read.</p>
 <p>I find myself using <code><a href="https://stringr.tidyverse.org/reference/case.html">stringr::str_to_title()</a></code> for a clean way of presenting columns in documents and dashboards. This is the reason the default argument for <code>snake_to</code>’s output is “title”</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">dat &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/data.frame">data.frame</a></span>(</a>
-<a class="sourceLine" id="cb10-2" data-line-number="2">  <span class="dt">first_column_example =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>),</a>
-<a class="sourceLine" id="cb10-3" data-line-number="3">  <span class="dt">second_column_ex =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>),</a>
-<a class="sourceLine" id="cb10-4" data-line-number="4">  <span class="dt">thirdColumn_example =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"q"</span>, <span class="st">"w"</span>, <span class="st">"e"</span>)</a>
-<a class="sourceLine" id="cb10-5" data-line-number="5">)</a>
-<a class="sourceLine" id="cb10-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb10-7" data-line-number="7">dat <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb10-8" data-line-number="8"><span class="st">  </span><span class="kw"><a href="reference/snake_to.html">snake_to</a></span>()</a>
-<a class="sourceLine" id="cb10-9" data-line-number="9"><span class="co">#&gt;   First Column Example Second Column Ex Thirdcolumn Example</span></a>
-<a class="sourceLine" id="cb10-10" data-line-number="10"><span class="co">#&gt; 1                    1                a                   q</span></a>
-<a class="sourceLine" id="cb10-11" data-line-number="11"><span class="co">#&gt; 2                    2                b                   w</span></a>
-<a class="sourceLine" id="cb10-12" data-line-number="12"><span class="co">#&gt; 3                    3                c                   e</span></a></code></pre></div>
+<a class="sourceLine" id="cb10-2" data-line-number="2">  <span class="dt">lol_game    =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>),</a>
+<a class="sourceLine" id="cb10-3" data-line-number="3">  <span class="dt">lollipop    =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>),</a>
+<a class="sourceLine" id="cb10-4" data-line-number="4">  <span class="dt">thirdColumn =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"q"</span>, <span class="st">"w"</span>, <span class="st">"e"</span>),</a>
+<a class="sourceLine" id="cb10-5" data-line-number="5">  <span class="dt">average_dps =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">14</span>)</a>
+<a class="sourceLine" id="cb10-6" data-line-number="6">)</a>
+<a class="sourceLine" id="cb10-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb10-8" data-line-number="8">dat <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb10-9" data-line-number="9"><span class="st">  </span><span class="kw"><a href="reference/snake_to.html">snake_to</a></span>()</a>
+<a class="sourceLine" id="cb10-10" data-line-number="10"><span class="co">#&gt;   Lol Game Lollipop Thirdcolumn Average Dps</span></a>
+<a class="sourceLine" id="cb10-11" data-line-number="11"><span class="co">#&gt; 1        1        a           q          10</span></a>
+<a class="sourceLine" id="cb10-12" data-line-number="12"><span class="co">#&gt; 2        2        b           w          12</span></a>
+<a class="sourceLine" id="cb10-13" data-line-number="13"><span class="co">#&gt; 3        3        c           e          14</span></a></code></pre></div>
 <p>Sentence case:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">dat <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb11-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="reference/snake_to.html">snake_to</a></span>(<span class="dt">format =</span> <span class="st">"sentence"</span>)</a>
-<a class="sourceLine" id="cb11-3" data-line-number="3"><span class="co">#&gt;   First column example Second column ex Thirdcolumn example</span></a>
-<a class="sourceLine" id="cb11-4" data-line-number="4"><span class="co">#&gt; 1                    1                a                   q</span></a>
-<a class="sourceLine" id="cb11-5" data-line-number="5"><span class="co">#&gt; 2                    2                b                   w</span></a>
-<a class="sourceLine" id="cb11-6" data-line-number="6"><span class="co">#&gt; 3                    3                c                   e</span></a></code></pre></div>
+<a class="sourceLine" id="cb11-3" data-line-number="3"><span class="co">#&gt;   Lol game Lollipop Thirdcolumn Average dps</span></a>
+<a class="sourceLine" id="cb11-4" data-line-number="4"><span class="co">#&gt; 1        1        a           q          10</span></a>
+<a class="sourceLine" id="cb11-5" data-line-number="5"><span class="co">#&gt; 2        2        b           w          12</span></a>
+<a class="sourceLine" id="cb11-6" data-line-number="6"><span class="co">#&gt; 3        3        c           e          14</span></a></code></pre></div>
 <p>Title case and keep column names only:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">dat <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb12-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="reference/snake_to.html">snake_to</a></span>(<span class="dt">names_only =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb12-3" data-line-number="3"><span class="co">#&gt; [1] "First Column Example" "Second Column Ex"     "Thirdcolumn Example"</span></a></code></pre></div>
+<a class="sourceLine" id="cb12-3" data-line-number="3"><span class="co">#&gt; [1] "Lol Game"    "Lollipop"    "Thirdcolumn" "Average Dps"</span></a></code></pre></div>
+<p>Title case and capitalize the acronyms</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1">acronyms =<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"lol"</span>, <span class="st">"dps"</span>)</a>
+<a class="sourceLine" id="cb13-2" data-line-number="2">dat <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb13-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="reference/snake_to.html">snake_to</a></span>(<span class="dt">acronyms =</span> acronyms)</a>
+<a class="sourceLine" id="cb13-4" data-line-number="4"><span class="co">#&gt;   LOL Game Lollipop Thirdcolumn Average DPS</span></a>
+<a class="sourceLine" id="cb13-5" data-line-number="5"><span class="co">#&gt; 1        1        a           q          10</span></a>
+<a class="sourceLine" id="cb13-6" data-line-number="6"><span class="co">#&gt; 2        2        b           w          12</span></a>
+<a class="sourceLine" id="cb13-7" data-line-number="7"><span class="co">#&gt; 3        3        c           e          14</span></a></code></pre></div>
 <div id="arguments-3" class="section level4">
 <h4 class="hasAnchor">
 <a href="#arguments-3" class="anchor"></a>Arguments</h4>
@@ -263,6 +272,8 @@
 </ul>
 </li>
 <li>
+<code>acronyms</code> A Character. Default <code>NULL</code>. For when acronyms exist in the column names that need to be capitalized. Pass a character vector for when there is more than one acronym. Upper and/or lower case acronyms in this parameter will be accepted. This will only capitalize the wanted words, words that may contain the acronyms letter will NOT be capitalized.</li>
+<li>
 <code>names_only</code> A Logical. Default <code>FALSE</code>. If <code>TRUE</code>, <code><a href="reference/snake_to.html">snake_to()</a></code> will return a vector of transformed column names.</li>
 </ul>
 <hr>
@@ -274,8 +285,7 @@
 <a href="#thanks-to" class="anchor"></a>Thanks To</h2>
 <ul>
 <li>Hadley’s <a href="http://r-pkgs.had.co.nz/">R Packages</a> book</li>
-<li>The <a href="https://github.com/helske/changer">changer</a> package for the easy name transition from <code>koderkow</code> to <code>kowr</code>
-</li>
+<li>The <a href="https://github.com/ropenscilabs/tic">tic</a> package for the easiest package setupever</li>
 <li>The `c(“<a href="https://github.com/mdlincoln/clipr">clipr</a>”, “<a href="https://github.com/MilesMcBain/datapasta">datapasta</a>”, “<a href="https://github.com/tidyverse/reprex">reprex</a>”) packages for testing methods involving clipboards</li>
 <li>Big thanks to the user <a href="https://community.rstudio.com/t/internal-testing-using-clipr-and-testthat-in-terms-of-code-coverage/32872">jdblischak</a> on RStudio Community for helping the structure of testing <code><a href="reference/back_to_forward.html">back_to_forward()</a></code>
 </li>

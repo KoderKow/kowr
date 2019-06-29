@@ -110,13 +110,14 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>snake_to</span>(<span class='no'>dat</span>, <span class='kw'>format</span> <span class='kw'>=</span> <span class='st'>"title"</span>, <span class='kw'>names_only</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>snake_to</span>(<span class='no'>.data</span>, <span class='kw'>format</span> <span class='kw'>=</span> <span class='st'>"title"</span>, <span class='kw'>acronyms</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>names_only</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>dat</th>
+      <th>.data</th>
       <td><p>A data.frame. The input data.frame.</p></td>
     </tr>
     <tr>
@@ -128,6 +129,10 @@
 <li><p>`"sentence"` produces sentence case</p></li>
 <li><p>`"upper"` produces upper case</p></li>
 </ul></td>
+    </tr>
+    <tr>
+      <th>acronyms</th>
+      <td><p>A Character. Default `NULL`. For when acronyms exist in the column names that need to be capitalized. Pass a character vector for when there is more than one acronym. Upper and/or lower case acronyms in this parameter will be accepted. This will only capitalize the wanted words, words that may contain the acronyms letter will NOT be capitalized.</p></td>
     </tr>
     <tr>
       <th>names_only</th>
@@ -143,16 +148,21 @@
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><span class='co'># NOT RUN {</span>
 <span class='co'># snake to title</span>
-<span class='no'>dat</span> <span class='kw'>%&gt;%</span>
+<span class='no'>.data</span> <span class='kw'>%&gt;%</span>
   <span class='fu'>snake_to</span>()
 
 <span class='co'># snake to sentence</span>
-<span class='no'>dat</span> <span class='kw'>%&gt;%</span>
+<span class='no'>.data</span> <span class='kw'>%&gt;%</span>
   <span class='fu'>snake_to</span>(<span class='kw'>format</span> <span class='kw'>=</span> <span class='st'>"sentence"</span>)
 
 <span class='co'># snake to title, keep vector of transformed column names</span>
-<span class='no'>dat</span> <span class='kw'>%&gt;%</span>
+<span class='no'>.data</span> <span class='kw'>%&gt;%</span>
   <span class='fu'>snake_to</span>(<span class='kw'>names_only</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+
+<span class='co'># snake to title, capitalize acronyms</span>
+<span class='no'>acronyms</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"pyr"</span>, <span class='st'>"cyr"</span>)
+<span class='no'>.data</span> <span class='kw'>%&gt;%</span>
+  <span class='fu'>snake_to</span>(<span class='kw'>acronyms</span> <span class='kw'>=</span> <span class='no'>acronyms</span>)
 <span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
