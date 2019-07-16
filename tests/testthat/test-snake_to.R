@@ -1,8 +1,15 @@
+library(ggplot2)
+library(magrittr)
+
 dat <- data.frame(
   lol_game = c(1,2,3),
   lollipop = c("a", "b", "c"),
   thirdColumn = c("q", "w", "e")
 )
+
+p <- dat %>%
+  ggplot(aes(lollipop, lol_game)) +
+  geom_col()
 
 test_that("returns a dataframe (list)", {
   dat_clean <- dat %>%
@@ -73,4 +80,22 @@ test_that("acronyms", {
     snake_to(format = "normal", acronym = "lol", names_only = TRUE) %>%
     paste(., collapse = " ")
   expect_equal(acronym_test, "LOL game lollipop thirdColumn")
+})
+
+test_that("ggplot", {
+  p <- p %>% snake_to()
+  expect_equal(p$labels$y, "Lol Game")
+})
+
+test_that("names_only and ggplot error", {
+  expect_error(p %>% snake_to(names_only = TRUE))
+})
+
+test_that("data.frame and ggplot classes only", {
+  expect_error(c(1, 2, 3) %>% snake_to())
+})
+
+test_that("ggplot title", {
+  p <- p %>% snake_to(ggplot_title = TRUE)
+  expect_equal(p$labels$title, "Relation Between Lollipop and Lol Game")
 })

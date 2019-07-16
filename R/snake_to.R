@@ -2,7 +2,7 @@
 #'
 #' @description This is useful for when the user wants to use the columns in a presentitive way. Shiny, Power BI, and RMarkdown are use cases where we may want clean column names for the user to read.
 #'
-#' @param .data A data.frame. The input data.frame.
+#' @param object data.frame or ggplot. A data.frame will have transformed column names. A ggplot object will have transformed X and Y axes.
 #' @param format A string. The desired target (default is "title") case with options including:
 #' \itemize{
 #'  \item{`"title"` produces title case}
@@ -13,6 +13,7 @@
 #'  }
 #' @param acronyms A Character. Default `NULL`. For when acronyms exist in the column names that need to be capitalized. Pass a character vector for when there is more than one acronym. Upper and/or lower case acronyms in this parameter will be accepted. This will only capitalize the wanted words, words that may contain the acronyms letter will NOT be capitalized.
 #' @param names_only A Logical. Default `FALSE`. If `TRUE`, `snake_to()` will return a vector of transformed column names.
+#' @param ggplot_title A Logical. Default `FALSE`. If `TRUE`, `snake_to()` will add a title to the ggplot object that refelcts the clean X and Y axes.
 #'
 #' @return Returns the data.frame with clean names or a vector of strings (based on the `names_only` parameter.
 #' @export
@@ -36,9 +37,24 @@
 #' .data %>%
 #'   snake_to(acronyms = acronyms)
 #' }
-snake_to <- function(.data, format = "title", acronyms = NULL, names_only = FALSE) {
-  names_cleaned <- names(.data) %>%
-    stringr::str_replace_all("_", " ")
+snake_to <- function(object, format = "title", acronyms = NULL, names_only = FALSE, ggplot_title = FALSE) {
+  object_check <- function(class) {
+    any(class(object) == class)
+  }
+
+  if (names_only == TRUE & object_check("ggplot")) {
+    stop("names_only = TRUE and an object of class 'ggplot' cannot be used together.")
+  }
+
+  if (object_check("data.frame")) {
+    names_cleaned <- names(object) %>%
+      stringr::str_replace_all("_", " ")
+  } else if (object_check("ggplot")) {
+    names_cleaned <- c(object$labels$x, object$labels$y) %>%
+      stringr::str_replace_all("_", " ")
+  } else {
+    stop("Object's class is not supported. Object needs to be either 'data.frame' or 'ggplot'.")
+  }
 
   if (format == "title") {
     names_cleaned <- names_cleaned %>%
@@ -75,8 +91,20 @@ snake_to <- function(.data, format = "title", acronyms = NULL, names_only = FALS
 
   if (names_only) {
     names_cleaned
-  } else {
-    names(.data) <- names_cleaned
-    .data
+  } else if (object_check("data.frame")) {
+    names(object) <- names_cleaned
+    object
+  } else if (object_check("ggplot")) {
+    object$labels$x <- names_cleaned[1]
+    object$labels$y <- names_cleaned[2]
+    if (ggplot_title) {
+      object$labels$title <- paste(
+        "Relation Between",
+        names_cleaned[1],
+        "and",
+        names_cleaned[2]
+      )
+    }
+    object
   }
 }

@@ -15,7 +15,8 @@ Imports:
     clipr,
     rstudioapi,
     stringr,
-    purrr
+    purrr,
+    ggplot2
 Suggests: 
     testthat (>= 2.1.0),
     covr,

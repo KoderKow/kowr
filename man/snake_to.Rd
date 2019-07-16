@@ -4,11 +4,11 @@
 \alias{snake_to}
 \title{Remove Snake Case}
 \usage{
-snake_to(.data, format = "title", acronyms = NULL,
-  names_only = FALSE)
+snake_to(object, format = "title", acronyms = NULL,
+  names_only = FALSE, ggplot_title = FALSE)
 }
 \arguments{
-\item{.data}{A data.frame. The input data.frame.}
+\item{object}{data.frame or ggplot. A data.frame will have transformed column names. A ggplot object will have transformed X and Y axes.}
 
 \item{format}{A string. The desired target (default is "title") case with options including:
 \itemize{
@@ -22,6 +22,8 @@ snake_to(.data, format = "title", acronyms = NULL,
 \item{acronyms}{A Character. Default `NULL`. For when acronyms exist in the column names that need to be capitalized. Pass a character vector for when there is more than one acronym. Upper and/or lower case acronyms in this parameter will be accepted. This will only capitalize the wanted words, words that may contain the acronyms letter will NOT be capitalized.}
 
 \item{names_only}{A Logical. Default `FALSE`. If `TRUE`, `snake_to()` will return a vector of transformed column names.}
+
+\item{ggplot_title}{A Logical. Default `FALSE`. If `TRUE`, `snake_to()` will add a title to the ggplot object that refelcts the clean X and Y axes.}
 }
 \value{
 Returns the data.frame with clean names or a vector of strings (based on the `names_only` parameter.
