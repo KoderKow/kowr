@@ -110,15 +110,15 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>snake_to</span>(<span class='no'>.data</span>, <span class='kw'>format</span> <span class='kw'>=</span> <span class='st'>"title"</span>, <span class='kw'>acronyms</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>names_only</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>snake_to</span>(<span class='no'>object</span>, <span class='kw'>format</span> <span class='kw'>=</span> <span class='st'>"title"</span>, <span class='kw'>acronyms</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>names_only</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>ggplot_title</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>.data</th>
-      <td><p>A data.frame. The input data.frame.</p></td>
+      <th>object</th>
+      <td><p>data.frame or ggplot. A data.frame will have transformed column names. A ggplot object will have transformed X and Y axes.</p></td>
     </tr>
     <tr>
       <th>format</th>
@@ -137,6 +137,10 @@
     <tr>
       <th>names_only</th>
       <td><p>A Logical. Default `FALSE`. If `TRUE`, `snake_to()` will return a vector of transformed column names.</p></td>
+    </tr>
+    <tr>
+      <th>ggplot_title</th>
+      <td><p>A Logical. Default `FALSE`. If `TRUE`, `snake_to()` will add a title to the ggplot object that refelcts the clean X and Y axes.</p></td>
     </tr>
     </table>
     
