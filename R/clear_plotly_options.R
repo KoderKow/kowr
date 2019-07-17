@@ -48,5 +48,5 @@ clear_plotly_options <- function(plotly_object, buttons_to_keep = NULL, keep_log
     plotly::config(
       displaylogo = keep_logo,
       modeBarButtonsToRemove = remove_buttons
-    ) -> m
+    )
 }
