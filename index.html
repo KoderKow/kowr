@@ -290,7 +290,7 @@ Due to the README format, images are screenshots
 <div id="ggplot-titles" class="section level5">
 <h5 class="hasAnchor">
 <a href="#ggplot-titles" class="anchor"></a>ggplot titles:</h5>
-<p><code><a href="reference/snake_to.html">snake_to()</a></code> will also clean up ggplot <em>x</em> and <em>y</em> axes. Pipe the saved ggplot object into <code><a href="reference/snake_to.html">snake_to()</a></code> and it will clean up snake case titles. There is also an options for <code>ggplot_title</code>; when true this will create a title on the plot “Relation Between <em>x</em> and <em>y</em>”.</p>
+<p><code><a href="reference/snake_to.html">snake_to()</a></code> will also clean up ggplot <em>x</em> and <em>y</em> axes. Pipe the saved ggplot object into <code><a href="reference/snake_to.html">snake_to()</a></code> and it will clean up snake case titles. There is also an options for <code>ggplot_title</code>; when true this will create a title on the plot “Relation Between <em>x</em> and <em>y</em>”. If there is a legend the title will be capitalized using <code>str_to_title()</code>.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(ggplot2)</a>
 <a class="sourceLine" id="cb13-2" data-line-number="2"></a>
 <a class="sourceLine" id="cb13-3" data-line-number="3">p &lt;-<span class="st"> </span>dat <span class="op">%&gt;%</span><span class="st"> </span></a>
