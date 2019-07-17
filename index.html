@@ -69,6 +69,18 @@
     
     
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+<style>
+.r-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+figcaption {
+  text-align: center;
+}
+</style>
 <div id="kowr" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#kowr" class="anchor"></a>kowr</h1></div>
@@ -129,17 +141,32 @@
 <div id="clear_plotly_options" class="section level3">
 <h3 class="hasAnchor">
 <a href="#clear_plotly_options" class="anchor"></a>clear_plotly_options()</h3>
-<p>Default <code>plot_ly()</code> output:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">p &lt;-<span class="st"> </span><span class="kw">plot_ly</span>(<span class="dt">data =</span> mtcars, <span class="dt">x =</span> <span class="op">~</span>mpg, <span class="dt">y =</span> <span class="op">~</span>hp, <span class="dt">type =</span> <span class="st">"scatter"</span>, <span class="dt">mode =</span> <span class="st">"markers"</span>)</a></code></pre></div>
-<p>Remove all buttons on top of the plot:</p>
+<div id="default-plot_ly-output" class="section level5">
+<h5 class="hasAnchor">
+<a href="#default-plot_ly-output" class="anchor"></a>Default <code><a href="https://www.rdocumentation.org/packages/plotly/topics/plot_ly">plot_ly()</a></code> output:</h5>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(plotly)</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb3-3" data-line-number="3">p &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/plotly/topics/plot_ly">plot_ly</a></span>(<span class="dt">data =</span> mtcars, <span class="dt">x =</span> <span class="op">~</span>mpg, <span class="dt">y =</span> <span class="op">~</span>hp, <span class="dt">type =</span> <span class="st">"scatter"</span>, <span class="dt">mode =</span> <span class="st">"markers"</span>)</a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb3-5" data-line-number="5">p</a></code></pre></div>
+<figure><img class="r-img" src="https://i.imgur.com/Xavhnzb.png"><figcaption>
+Due to the README format, images are screenshots
+</figcaption></figure>
+</div>
+<div id="remove-all-buttons-on-top-of-the-plot" class="section level5">
+<h5 class="hasAnchor">
+<a href="#remove-all-buttons-on-top-of-the-plot" class="anchor"></a>Remove all buttons on top of the plot:</h5>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">p <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="st">  </span><span class="kw">clean_plotly_options</span>()</a></code></pre></div>
-<p>Keep “Download plot as a png” button:</p>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="reference/clear_plotly_options.html">clear_plotly_options</a></span>()</a></code></pre></div>
+<p><img class="r-img" src="https://i.imgur.com/LlcACiG.png"></p>
+</div>
+<div id="keep-zoom-in-and-zoom-out-buttons" class="section level5">
+<h5 class="hasAnchor">
+<a href="#keep-zoom-in-and-zoom-out-buttons" class="anchor"></a>Keep “Zoom in” and “Zoom out” buttons:</h5>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">p <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="reference/clear_plotly_options.html">clear_plotly_options</a></span>(<span class="dt">buttons_to_keep =</span> <span class="st">"toImage"</span>)</a></code></pre></div>
-<p>Keep “Zoom in” and “Zoom out” buttons:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">p <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="reference/clear_plotly_options.html">clear_plotly_options</a></span>(<span class="dt">buttons_to_keep =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"zoomIn2d"</span>, <span class="st">"zoomOut2d"</span>))</a></code></pre></div>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="reference/clear_plotly_options.html">clear_plotly_options</a></span>(<span class="dt">buttons_to_keep =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"zoomIn2d"</span>, <span class="st">"zoomOut2d"</span>))</a></code></pre></div>
+<p><img class="r-img" src="https://i.imgur.com/7DovA32.png"></p>
+</div>
 <div id="arguments-1" class="section level4">
 <h4 class="hasAnchor">
 <a href="#arguments-1" class="anchor"></a>Arguments:</h4>
@@ -185,14 +212,14 @@
 <h3 class="hasAnchor">
 <a href="#round_up" class="anchor"></a>round_up()</h3>
 <p>Round whole numbers up. This function will always round up to the number place second to the left:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw"><a href="reference/round_up.html">round_up</a></span>(<span class="dt">x =</span> <span class="dv">123456</span>)</a>
-<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="co">#&gt; [1] 130000</span></a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw"><a href="reference/round_up.html">round_up</a></span>(<span class="dt">x =</span> <span class="dv">123456</span>)</a>
+<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="co">#&gt; [1] 130000</span></a></code></pre></div>
 <p>Numbers with only 2 numeric places (tens), then it will round on the tens position value:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw"><a href="reference/round_up.html">round_up</a></span>(<span class="dt">x =</span> <span class="dv">19</span>)</a>
-<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="co">#&gt; [1] 20</span></a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw"><a href="reference/round_up.html">round_up</a></span>(<span class="dt">x =</span> <span class="dv">19</span>)</a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="co">#&gt; [1] 20</span></a></code></pre></div>
 <p>If needed, we can change the value to a dollar amount. Using <code>as_dollar = TRUE</code> will change the numeric value to a character:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw"><a href="reference/round_up.html">round_up</a></span>(<span class="dt">x =</span> <span class="dv">1991</span>, <span class="dt">format =</span> <span class="st">"dollar"</span>)</a>
-<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="co">#&gt; [1] "$2,000"</span></a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw"><a href="reference/round_up.html">round_up</a></span>(<span class="dt">x =</span> <span class="dv">1991</span>, <span class="dt">format =</span> <span class="st">"dollar"</span>)</a>
+<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="co">#&gt; [1] "$2,000"</span></a></code></pre></div>
 <div id="arguments-2" class="section level4">
 <h4 class="hasAnchor">
 <a href="#arguments-2" class="anchor"></a>Arguments</h4>
@@ -218,44 +245,73 @@
 <h3 class="hasAnchor">
 <a href="#snake_to" class="anchor"></a>snake_to()</h3>
 <p>This is useful for when the user wants to use the columns in a representative way. Shiny, Power BI, and RMarkdown are use cases where we may want clean column names for the user to read.</p>
-<p>I find myself using <code><a href="https://stringr.tidyverse.org/reference/case.html">stringr::str_to_title()</a></code> for a clean way of presenting columns in documents and dashboards. This is the reason the default argument for <code>snake_to</code>’s output is “title”</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">dat &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/data.frame">data.frame</a></span>(</a>
-<a class="sourceLine" id="cb10-2" data-line-number="2">  <span class="dt">lol_game    =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>),</a>
-<a class="sourceLine" id="cb10-3" data-line-number="3">  <span class="dt">lollipop    =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>),</a>
-<a class="sourceLine" id="cb10-4" data-line-number="4">  <span class="dt">thirdColumn =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"q"</span>, <span class="st">"w"</span>, <span class="st">"e"</span>),</a>
-<a class="sourceLine" id="cb10-5" data-line-number="5">  <span class="dt">average_dps =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">14</span>)</a>
-<a class="sourceLine" id="cb10-6" data-line-number="6">)</a>
-<a class="sourceLine" id="cb10-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb10-8" data-line-number="8">dat <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb10-9" data-line-number="9"><span class="st">  </span><span class="kw"><a href="reference/snake_to.html">snake_to</a></span>()</a>
-<a class="sourceLine" id="cb10-10" data-line-number="10"><span class="co">#&gt;   Lol Game Lollipop Thirdcolumn Average Dps</span></a>
-<a class="sourceLine" id="cb10-11" data-line-number="11"><span class="co">#&gt; 1        1        a           q          10</span></a>
-<a class="sourceLine" id="cb10-12" data-line-number="12"><span class="co">#&gt; 2        2        b           w          12</span></a>
-<a class="sourceLine" id="cb10-13" data-line-number="13"><span class="co">#&gt; 3        3        c           e          14</span></a></code></pre></div>
-<p>Sentence case:</p>
+<p>I find myself using <code><a href="https://stringr.tidyverse.org/reference/case.html">stringr::str_to_title()</a></code> for a clean way of presenting columns in documents and dashboards. This is the reason the default argument for <code>snake_to</code>’s output is “title”.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">dat &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/data.frame">data.frame</a></span>(</a>
+<a class="sourceLine" id="cb9-2" data-line-number="2">  <span class="dt">lol_game    =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>),</a>
+<a class="sourceLine" id="cb9-3" data-line-number="3">  <span class="dt">lollipop    =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>),</a>
+<a class="sourceLine" id="cb9-4" data-line-number="4">  <span class="dt">thirdColumn =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"q"</span>, <span class="st">"w"</span>, <span class="st">"e"</span>),</a>
+<a class="sourceLine" id="cb9-5" data-line-number="5">  <span class="dt">average_dps =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">14</span>)</a>
+<a class="sourceLine" id="cb9-6" data-line-number="6">)</a>
+<a class="sourceLine" id="cb9-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb9-8" data-line-number="8">dat <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb9-9" data-line-number="9"><span class="st">  </span><span class="kw"><a href="reference/snake_to.html">snake_to</a></span>()</a>
+<a class="sourceLine" id="cb9-10" data-line-number="10"><span class="co">#&gt;   Lol Game Lollipop Thirdcolumn Average Dps</span></a>
+<a class="sourceLine" id="cb9-11" data-line-number="11"><span class="co">#&gt; 1        1        a           q          10</span></a>
+<a class="sourceLine" id="cb9-12" data-line-number="12"><span class="co">#&gt; 2        2        b           w          12</span></a>
+<a class="sourceLine" id="cb9-13" data-line-number="13"><span class="co">#&gt; 3        3        c           e          14</span></a></code></pre></div>
+<div id="sentence-case" class="section level5">
+<h5 class="hasAnchor">
+<a href="#sentence-case" class="anchor"></a>Sentence case:</h5>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">dat <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="reference/snake_to.html">snake_to</a></span>(<span class="dt">format =</span> <span class="st">"sentence"</span>)</a>
+<a class="sourceLine" id="cb10-3" data-line-number="3"><span class="co">#&gt;   Lol game Lollipop Thirdcolumn Average dps</span></a>
+<a class="sourceLine" id="cb10-4" data-line-number="4"><span class="co">#&gt; 1        1        a           q          10</span></a>
+<a class="sourceLine" id="cb10-5" data-line-number="5"><span class="co">#&gt; 2        2        b           w          12</span></a>
+<a class="sourceLine" id="cb10-6" data-line-number="6"><span class="co">#&gt; 3        3        c           e          14</span></a></code></pre></div>
+</div>
+<div id="title-case-and-keep-column-names-only" class="section level5">
+<h5 class="hasAnchor">
+<a href="#title-case-and-keep-column-names-only" class="anchor"></a>Title case and keep column names only:</h5>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">dat <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="reference/snake_to.html">snake_to</a></span>(<span class="dt">format =</span> <span class="st">"sentence"</span>)</a>
-<a class="sourceLine" id="cb11-3" data-line-number="3"><span class="co">#&gt;   Lol game Lollipop Thirdcolumn Average dps</span></a>
-<a class="sourceLine" id="cb11-4" data-line-number="4"><span class="co">#&gt; 1        1        a           q          10</span></a>
-<a class="sourceLine" id="cb11-5" data-line-number="5"><span class="co">#&gt; 2        2        b           w          12</span></a>
-<a class="sourceLine" id="cb11-6" data-line-number="6"><span class="co">#&gt; 3        3        c           e          14</span></a></code></pre></div>
-<p>Title case and keep column names only:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">dat <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="reference/snake_to.html">snake_to</a></span>(<span class="dt">names_only =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb12-3" data-line-number="3"><span class="co">#&gt; [1] "Lol Game"    "Lollipop"    "Thirdcolumn" "Average Dps"</span></a></code></pre></div>
-<p>Title case and capitalize the acronyms</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1">acronyms =<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"lol"</span>, <span class="st">"dps"</span>)</a>
-<a class="sourceLine" id="cb13-2" data-line-number="2">dat <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb13-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="reference/snake_to.html">snake_to</a></span>(<span class="dt">acronyms =</span> acronyms)</a>
-<a class="sourceLine" id="cb13-4" data-line-number="4"><span class="co">#&gt;   LOL Game Lollipop Thirdcolumn Average DPS</span></a>
-<a class="sourceLine" id="cb13-5" data-line-number="5"><span class="co">#&gt; 1        1        a           q          10</span></a>
-<a class="sourceLine" id="cb13-6" data-line-number="6"><span class="co">#&gt; 2        2        b           w          12</span></a>
-<a class="sourceLine" id="cb13-7" data-line-number="7"><span class="co">#&gt; 3        3        c           e          14</span></a></code></pre></div>
+<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="reference/snake_to.html">snake_to</a></span>(<span class="dt">names_only =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb11-3" data-line-number="3"><span class="co">#&gt; [1] "Lol Game"    "Lollipop"    "Thirdcolumn" "Average Dps"</span></a></code></pre></div>
+</div>
+<div id="title-case-and-capitalize-the-acronyms" class="section level5">
+<h5 class="hasAnchor">
+<a href="#title-case-and-capitalize-the-acronyms" class="anchor"></a>Title case and capitalize the acronyms</h5>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">acronyms =<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"lol"</span>, <span class="st">"dps"</span>)</a>
+<a class="sourceLine" id="cb12-2" data-line-number="2">dat <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb12-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="reference/snake_to.html">snake_to</a></span>(<span class="dt">acronyms =</span> acronyms)</a>
+<a class="sourceLine" id="cb12-4" data-line-number="4"><span class="co">#&gt;   LOL Game Lollipop Thirdcolumn Average DPS</span></a>
+<a class="sourceLine" id="cb12-5" data-line-number="5"><span class="co">#&gt; 1        1        a           q          10</span></a>
+<a class="sourceLine" id="cb12-6" data-line-number="6"><span class="co">#&gt; 2        2        b           w          12</span></a>
+<a class="sourceLine" id="cb12-7" data-line-number="7"><span class="co">#&gt; 3        3        c           e          14</span></a></code></pre></div>
+</div>
+<div id="ggplot-titles" class="section level5">
+<h5 class="hasAnchor">
+<a href="#ggplot-titles" class="anchor"></a>ggplot titles:</h5>
+<p><code><a href="reference/snake_to.html">snake_to()</a></code> will also clean up ggplot <em>x</em> and <em>y</em> axes. Pipe the saved ggplot object into <code><a href="reference/snake_to.html">snake_to()</a></code> and it will clean up snake case titles. There is also an options for <code>ggplot_title</code>; when true this will create a title on the plot “Relation Between <em>x</em> and <em>y</em>”.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(ggplot2)</a>
+<a class="sourceLine" id="cb13-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb13-3" data-line-number="3">p &lt;-<span class="st"> </span>dat <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb13-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">x =</span> lollipop, <span class="dt">y =</span> lol_game)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb13-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span>()</a>
+<a class="sourceLine" id="cb13-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb13-7" data-line-number="7">p</a></code></pre></div>
+<p><img src="reference/figures/README-unnamed-chunk-10-1.png" width="50%" style="display: block; margin: auto;"></p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1"></a>
+<a class="sourceLine" id="cb14-2" data-line-number="2">p <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="reference/snake_to.html">snake_to</a></span>()</a></code></pre></div>
+<p><img src="reference/figures/README-unnamed-chunk-10-2.png" width="50%" style="display: block; margin: auto;"></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1"></a>
+<a class="sourceLine" id="cb15-2" data-line-number="2">p <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="reference/snake_to.html">snake_to</a></span>(<span class="dt">ggplot_title =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<p><img src="reference/figures/README-unnamed-chunk-10-3.png" width="50%" style="display: block; margin: auto;"></p>
+</div>
 <div id="arguments-3" class="section level4">
 <h4 class="hasAnchor">
 <a href="#arguments-3" class="anchor"></a>Arguments</h4>
 <ul>
-<li>‘dat’ A data.frame. The input data.frame.</li>
+<li>
+<code>object</code> A data.frame or ggplot. A data.frame will have transformed column names. A ggplot object will have transformed X and Y axes.</li>
 <li>
 <code>format</code> A string. The desired target (default is “title”) case with options including:
 <ul>
@@ -275,6 +331,8 @@
 <code>acronyms</code> A Character. Default <code>NULL</code>. For when acronyms exist in the column names that need to be capitalized. Pass a character vector for when there is more than one acronym. Upper and/or lower case acronyms in this parameter will be accepted. This will only capitalize the wanted words, words that may contain the acronyms letter will NOT be capitalized.</li>
 <li>
 <code>names_only</code> A Logical. Default <code>FALSE</code>. If <code>TRUE</code>, <code><a href="reference/snake_to.html">snake_to()</a></code> will return a vector of transformed column names.</li>
+<li>
+<code>ggplot_title</code> A Logical. Default <code>FALSE</code>. If <code>TRUE</code>, <code><a href="reference/snake_to.html">snake_to()</a></code> will add a title to the ggplot object that refelcts the clean X and Y axes.</li>
 </ul>
 <hr>
 </div>
