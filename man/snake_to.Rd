@@ -8,7 +8,7 @@ snake_to(object, format = "title", acronyms = NULL,
   names_only = FALSE, ggplot_title = FALSE)
 }
 \arguments{
-\item{object}{data.frame or ggplot. A data.frame will have transformed column names. A ggplot object will have transformed X and Y axes.}
+\item{object}{A data.frame or ggplot. A data.frame will have transformed column names. A ggplot object will have transformed X and Y axes.}
 
 \item{format}{A string. The desired target (default is "title") case with options including:
 \itemize{
@@ -26,7 +26,7 @@ snake_to(object, format = "title", acronyms = NULL,
 \item{ggplot_title}{A Logical. Default `FALSE`. If `TRUE`, `snake_to()` will add a title to the ggplot object that refelcts the clean X and Y axes.}
 }
 \value{
-Returns the data.frame with clean names or a vector of strings (based on the `names_only` parameter.
+Returns a data.frame with clean names, a ggplot object with clean axes, or a vector of strings.
 }
 \description{
 This is useful for when the user wants to use the columns in a presentitive way. Shiny, Power BI, and RMarkdown are use cases where we may want clean column names for the user to read.

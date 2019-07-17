@@ -2,7 +2,7 @@
 #'
 #' @description This is useful for when the user wants to use the columns in a presentitive way. Shiny, Power BI, and RMarkdown are use cases where we may want clean column names for the user to read.
 #'
-#' @param object data.frame or ggplot. A data.frame will have transformed column names. A ggplot object will have transformed X and Y axes.
+#' @param object A data.frame or ggplot. A data.frame will have transformed column names. A ggplot object will have transformed X and Y axes.
 #' @param format A string. The desired target (default is "title") case with options including:
 #' \itemize{
 #'  \item{`"title"` produces title case}
@@ -15,7 +15,7 @@
 #' @param names_only A Logical. Default `FALSE`. If `TRUE`, `snake_to()` will return a vector of transformed column names.
 #' @param ggplot_title A Logical. Default `FALSE`. If `TRUE`, `snake_to()` will add a title to the ggplot object that refelcts the clean X and Y axes.
 #'
-#' @return Returns the data.frame with clean names or a vector of strings (based on the `names_only` parameter.
+#' @return Returns a data.frame with clean names, a ggplot object with clean axes, or a vector of strings.
 #' @export
 #'
 #' @examples
@@ -38,18 +38,15 @@
 #'   snake_to(acronyms = acronyms)
 #' }
 snake_to <- function(object, format = "title", acronyms = NULL, names_only = FALSE, ggplot_title = FALSE) {
-  object_check <- function(class) {
-    any(class(object) == class)
-  }
 
-  if (names_only == TRUE & object_check("ggplot")) {
+  if (names_only == TRUE & object_check(object, "ggplot")) {
     stop("names_only = TRUE and an object of class 'ggplot' cannot be used together.")
   }
 
-  if (object_check("data.frame")) {
+  if (object_check(object, "data.frame")) {
     names_cleaned <- names(object) %>%
       stringr::str_replace_all("_", " ")
-  } else if (object_check("ggplot")) {
+  } else if (object_check(object, "ggplot")) {
     names_cleaned <- c(object$labels$x, object$labels$y) %>%
       stringr::str_replace_all("_", " ")
   } else {
@@ -91,10 +88,10 @@ snake_to <- function(object, format = "title", acronyms = NULL, names_only = FAL
 
   if (names_only) {
     names_cleaned
-  } else if (object_check("data.frame")) {
+  } else if (object_check(object, "data.frame")) {
     names(object) <- names_cleaned
     object
-  } else if (object_check("ggplot")) {
+  } else if (object_check(object, "ggplot")) {
     object$labels$x <- names_cleaned[1]
     object$labels$y <- names_cleaned[2]
     if (ggplot_title) {
@@ -107,4 +104,8 @@ snake_to <- function(object, format = "title", acronyms = NULL, names_only = FAL
     }
     object
   }
+}
+
+object_check <- function(object, class) {
+  any(class(object) == class)
 }
