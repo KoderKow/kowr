@@ -13,6 +13,19 @@ knitr::opts_chunk$set(
 )
 ```
 
+<style>
+.r-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+figcaption {
+  text-align: center;
+}
+</style>
+
 # kowr
 
 <!-- badges: start -->
@@ -73,32 +86,38 @@ Run `back_to_forward()` in the console. This will output a string with forward s
 
 ### clear_plotly_options()
 
-Default `plot_ly()` output:
+##### Default `plot_ly()` output:
 
 ``` r
+library(plotly)
+
 p <- plot_ly(data = mtcars, x = ~mpg, y = ~hp, type = "scatter", mode = "markers")
+
+p
 ```
 
-Remove all buttons on top of the plot:
+<figure>
+  <img class="r-img" src="https://i.imgur.com/Xavhnzb.png">
+  <figcaption>Due to the README format, images are screenshots</figcaption>
+</figure>
+
+##### Remove all buttons on top of the plot:
 
 ``` r
 p %>% 
-  clean_plotly_options()
+  clear_plotly_options()
 ```
 
-Keep "Download plot as a png" button:
+<img class="r-img" src="https://i.imgur.com/LlcACiG.png">
 
-``` r
-p %>%
-  clear_plotly_options(buttons_to_keep = "toImage")
-```
-
-Keep "Zoom in" and "Zoom out" buttons:
+##### Keep "Zoom in" and "Zoom out" buttons:
 
 ``` r
 p %>%
   clear_plotly_options(buttons_to_keep = c("zoomIn2d", "zoomOut2d"))
 ```
+
+<img class="r-img" src="https://i.imgur.com/7DovA32.png">
 
 #### Arguments:
 
@@ -154,7 +173,7 @@ round_up(x = 1991, format = "dollar")
 
 This is useful for when the user wants to use the columns in a representative way. Shiny, Power BI, and RMarkdown are use cases where we may want clean column names for the user to read.
 
-I find myself using `stringr::str_to_title()` for a clean way of presenting columns in documents and dashboards. This is the reason the default argument for `snake_to`'s output is "title"
+I find myself using `stringr::str_to_title()` for a clean way of presenting columns in documents and dashboards. This is the reason the default argument for `snake_to`'s output is "title".
 
 ```{r}
 dat <- data.frame(
@@ -168,21 +187,21 @@ dat %>%
   snake_to()
 ```
 
-Sentence case:
+##### Sentence case:
 
 ```{r}
 dat %>%
   snake_to(format = "sentence")
 ```
 
-Title case and keep column names only:
+##### Title case and keep column names only:
 
 ```{r}
 dat %>%
   snake_to(names_only = TRUE)
 ```
 
-Title case and capitalize the acronyms
+##### Title case and capitalize the acronyms
 
 ```{r}
 acronyms = c("lol", "dps")
@@ -190,9 +209,27 @@ dat %>%
   snake_to(acronyms = acronyms)
 ```
 
+##### ggplot titles:
+
+`snake_to()` will also clean up ggplot *x* and *y* axes. Pipe the saved ggplot object into `snake_to()` and it will clean up snake case titles. There is also an options for `ggplot_title`; when true this will create a title on the plot "Relation Between *x* and *y*".
+
+```{r, out.width="50%", fig.align="center"}
+library(ggplot2)
+
+p <- dat %>% 
+  ggplot(aes(x = lollipop, y = lol_game)) +
+  geom_col()
+
+p
+
+p %>% snake_to()
+
+p %>% snake_to(ggplot_title = TRUE)
+```
+
 #### Arguments
 
-- 'dat' A data.frame. The input data.frame.
+- `object` A data.frame or ggplot. A data.frame will have transformed column names. A ggplot object will have transformed X and Y axes.
 - `format` A string. The desired target (default is "title") case with options including:
   - `"title"` produces title case
   - `"lower"` produces lower case
@@ -201,6 +238,7 @@ dat %>%
   - `"upper"` produces upper case
 - `acronyms` A Character. Default `NULL`. For when acronyms exist in the column names that need to be capitalized. Pass a character vector for when there is more than one acronym. Upper and/or lower case acronyms in this parameter will be accepted. This will only capitalize the wanted words, words that may contain the acronyms letter will NOT be capitalized.
 - `names_only` A Logical. Default `FALSE`. If `TRUE`, `snake_to()` will return a vector of transformed column names.
+- `ggplot_title` A Logical. Default `FALSE`. If `TRUE`, `snake_to()` will add a title to the ggplot object that refelcts the clean X and Y axes.
 
 <hr>
 

@@ -1,6 +1,19 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+<style>
+.r-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+figcaption {
+  text-align: center;
+}
+</style>
+
 # kowr
 
 <!-- badges: start -->
@@ -85,33 +98,45 @@ assign the add-in `Back to Forward Slash` to a hotkey.
 
 ### clear\_plotly\_options()
 
-Default `plot_ly()`
-output:
+##### Default `plot_ly()` output:
 
 ``` r
+library(plotly)
+
 p <- plot_ly(data = mtcars, x = ~mpg, y = ~hp, type = "scatter", mode = "markers")
+
+p
 ```
 
-Remove all buttons on top of the plot:
+<figure>
+
+<img class="r-img" src="https://i.imgur.com/Xavhnzb.png">
+
+<figcaption>
+
+Due to the README format, images are screenshots
+
+</figcaption>
+
+</figure>
+
+##### Remove all buttons on top of the plot:
 
 ``` r
 p %>% 
-  clean_plotly_options()
+  clear_plotly_options()
 ```
 
-Keep “Download plot as a png” button:
+<img class="r-img" src="https://i.imgur.com/LlcACiG.png">
 
-``` r
-p %>%
-  clear_plotly_options(buttons_to_keep = "toImage")
-```
-
-Keep “Zoom in” and “Zoom out” buttons:
+##### Keep “Zoom in” and “Zoom out” buttons:
 
 ``` r
 p %>%
   clear_plotly_options(buttons_to_keep = c("zoomIn2d", "zoomOut2d"))
 ```
+
+<img class="r-img" src="https://i.imgur.com/7DovA32.png">
 
 #### Arguments:
 
@@ -183,7 +208,7 @@ we may want clean column names for the user to read.
 
 I find myself using `stringr::str_to_title()` for a clean way of
 presenting columns in documents and dashboards. This is the reason the
-default argument for `snake_to`’s output is “title”
+default argument for `snake_to`’s output is “title”.
 
 ``` r
 dat <- data.frame(
@@ -201,7 +226,7 @@ dat %>%
 #> 3        3        c           e          14
 ```
 
-Sentence case:
+##### Sentence case:
 
 ``` r
 dat %>%
@@ -212,7 +237,7 @@ dat %>%
 #> 3        3        c           e          14
 ```
 
-Title case and keep column names only:
+##### Title case and keep column names only:
 
 ``` r
 dat %>%
@@ -220,7 +245,7 @@ dat %>%
 #> [1] "Lol Game"    "Lollipop"    "Thirdcolumn" "Average Dps"
 ```
 
-Title case and capitalize the acronyms
+##### Title case and capitalize the acronyms
 
 ``` r
 acronyms = c("lol", "dps")
@@ -232,9 +257,43 @@ dat %>%
 #> 3        3        c           e          14
 ```
 
+##### ggplot titles:
+
+`snake_to()` will also clean up ggplot *x* and *y* axes. Pipe the saved
+ggplot object into `snake_to()` and it will clean up snake case titles.
+There is also an options for `ggplot_title`; when true this will create
+a title on the plot “Relation Between *x* and *y*”.
+
+``` r
+library(ggplot2)
+
+p <- dat %>% 
+  ggplot(aes(x = lollipop, y = lol_game)) +
+  geom_col()
+
+p
+```
+
+<img src="man/figures/README-unnamed-chunk-10-1.png" width="50%" style="display: block; margin: auto;" />
+
+``` r
+
+p %>% snake_to()
+```
+
+<img src="man/figures/README-unnamed-chunk-10-2.png" width="50%" style="display: block; margin: auto;" />
+
+``` r
+
+p %>% snake_to(ggplot_title = TRUE)
+```
+
+<img src="man/figures/README-unnamed-chunk-10-3.png" width="50%" style="display: block; margin: auto;" />
+
 #### Arguments
 
-  - ‘dat’ A data.frame. The input data.frame.
+  - `object` A data.frame or ggplot. A data.frame will have transformed
+    column names. A ggplot object will have transformed X and Y axes.
   - `format` A string. The desired target (default is “title”) case with
     options including:
       - `"title"` produces title case
@@ -250,6 +309,9 @@ dat %>%
     letter will NOT be capitalized.
   - `names_only` A Logical. Default `FALSE`. If `TRUE`, `snake_to()`
     will return a vector of transformed column names.
+  - `ggplot_title` A Logical. Default `FALSE`. If `TRUE`, `snake_to()`
+    will add a title to the ggplot object that refelcts the clean X and
+    Y axes.
 
 <hr>
 
