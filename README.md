@@ -262,7 +262,8 @@ dat %>%
 `snake_to()` will also clean up ggplot *x* and *y* axes. Pipe the saved
 ggplot object into `snake_to()` and it will clean up snake case titles.
 There is also an options for `ggplot_title`; when true this will create
-a title on the plot “Relation Between *x* and *y*”.
+a title on the plot “Relation Between *x* and *y*”. If there is a legend
+the title will be capitalized using `str_to_title()`.
 
 ``` r
 library(ggplot2)

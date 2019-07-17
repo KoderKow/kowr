@@ -47,8 +47,11 @@ snake_to <- function(object, format = "title", acronyms = NULL, names_only = FAL
     names_cleaned <- names(object) %>%
       stringr::str_replace_all("_", " ")
   } else if (object_check(object, "ggplot")) {
-    names_cleaned <- c(object$labels$x, object$labels$y) %>%
-      stringr::str_replace_all("_", " ")
+    # names_cleaned <- c(object$labels$x, object$labels$y) %>%
+    #   stringr::str_replace_all("_", " ")
+    list_names <- names(object$labels)
+    names_cleaned <- purrr::map(object$labels, ~ stringr::str_replace_all(.x, "_", " "))
+
   } else {
     stop("Object's class is not supported. Object needs to be either 'data.frame' or 'ggplot'.")
   }
@@ -92,14 +95,15 @@ snake_to <- function(object, format = "title", acronyms = NULL, names_only = FAL
     names(object) <- names_cleaned
     object
   } else if (object_check(object, "ggplot")) {
-    object$labels$x <- names_cleaned[1]
-    object$labels$y <- names_cleaned[2]
+    object$labels <- purrr::map(names_cleaned, ~ .x) %>%
+      purrr::set_names(list_names)
+
     if (ggplot_title) {
       object$labels$title <- paste(
         "Relation Between",
-        names_cleaned[1],
+        object$labels$x,
         "and",
-        names_cleaned[2]
+        object$labels$y
       )
     }
     object
