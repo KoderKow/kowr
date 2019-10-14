@@ -1,8 +1,8 @@
 #' @title Remove Snake Case
 #'
-#' @description This is useful for when the user wants to use the columns in a presentitive way. Shiny, Power BI, and RMarkdown are use cases where we may want clean column names for the user to read.
+#' @description This is useful for when the user wants to use the columns in a presentation. Shiny, Power BI, and RMarkdown are use cases where we may want clean column names for the user to read.
 #'
-#' @param object A data.frame or ggplot. A data.frame will have transformed column names. A ggplot object will have transformed X and Y axes.
+#' @param object A data.frame, ggplot or character vector object. A data.frame will have transformed column names. A ggplot object will have transformed X and Y axes. A character vector will have clean character names.
 #' @param format A string. The desired target (default is "title") case with options including:
 #' \itemize{
 #'  \item{`"title"` produces title case}
@@ -15,7 +15,7 @@
 #' @param names_only A Logical. Default `FALSE`. If `TRUE`, `snake_to()` will return a vector of transformed column names.
 #' @param ggplot_title A Logical. Default `FALSE`. If `TRUE`, `snake_to()` will add a title to the ggplot object that refelcts the clean X and Y axes.
 #'
-#' @return Returns a data.frame with clean names, a ggplot object with clean axes, or a vector of strings.
+#' @return Returns a data.frame with clean names, a ggplot object with clean axes, or a vector of clean strings.
 #' @export
 #'
 #' @examples
@@ -45,15 +45,34 @@ snake_to <- function(object, format = "title", acronyms = NULL, names_only = FAL
 
   if (object_check(object, "data.frame")) {
     names_cleaned <- names(object) %>%
-      stringr::str_replace_all("_", " ")
+      stringr::str_replace_all(
+        pattern = "_",
+        replacement = " "
+      )
+
   } else if (object_check(object, "ggplot")) {
     # names_cleaned <- c(object$labels$x, object$labels$y) %>%
     #   stringr::str_replace_all("_", " ")
     list_names <- names(object$labels)
-    names_cleaned <- purrr::map(object$labels, ~ stringr::str_replace_all(.x, "_", " "))
+
+    names_cleaned <- object$labels %>%
+      purrr::map(~ {
+        stringr::str_replace_all(
+          string = .x,
+          pattern = "_",
+          replacement = " "
+        )
+      })
+
+  } else if (object_check(object, "character_vector")) {
+    names_cleaned <- object %>%
+      stringr::str_replace_all(
+        pattern = "_",
+        replacement = " "
+      )
 
   } else {
-    stop("Object's class is not supported. Object needs to be either 'data.frame' or 'ggplot'.")
+    stop("Object's class is not supported. Object's class needs to be a data.frame, ggplot or a character vector.")
   }
 
   if (format == "title") {
@@ -83,19 +102,24 @@ snake_to <- function(object, format = "title", acronyms = NULL, names_only = FAL
       "\\b|\\b",
       stringr::str_to_upper(acronyms),
       "\\b",
-      collapse = "|")
+      collapse = "|"
+    )
 
     names_cleaned <- names_cleaned %>%
-      stringr::str_replace_all(words_to_cap, stringr::str_to_upper)
+      stringr::str_replace_all(
+        pattern = words_to_cap,
+        replacement = stringr::str_to_upper
+      )
   }
 
-  if (names_only) {
+  if (names_only | object_check(object, "character_vector")) {
     names_cleaned
   } else if (object_check(object, "data.frame")) {
     names(object) <- names_cleaned
     object
   } else if (object_check(object, "ggplot")) {
-    object$labels <- purrr::map(names_cleaned, ~ .x) %>%
+    object$labels <- names_cleaned %>%
+      purrr::map(~ .x) %>%
       purrr::set_names(list_names)
 
     if (ggplot_title) {
@@ -111,5 +135,9 @@ snake_to <- function(object, format = "title", acronyms = NULL, names_only = FAL
 }
 
 object_check <- function(object, class) {
-  any(class(object) == class)
+  if (class == "character_vector") {
+    purrr::is_vector(object) & purrr::is_character(object)
+  } else {
+    any(class(object) == class)
+  }
 }
