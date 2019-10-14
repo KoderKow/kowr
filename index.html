@@ -7,8 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Utility Functions • kowr</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="Utility Functions">
 <meta property="og:description" content="This is the realm where the random chunks of code I use will live.">
 <meta name="twitter:card" content="summary">
@@ -18,7 +19,7 @@
 <![endif]-->
 </head>
 <body>
-    <div class="container template-article">
+    <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -38,7 +39,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -49,7 +50,7 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/KoderKow/kowr">
-    <span class="fa fa-github fa-lg"></span>
+    <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -62,25 +63,9 @@
 <!--/.navbar -->
 
       
+
       </header><div class="row">
-  <div class="col-md-9 contents">
-    
-
-    
-    
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-<style>
-.r-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-
-figcaption {
-  text-align: center;
-}
-</style>
+  <div class="contents col-md-9">
 <div id="kowr" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#kowr" class="anchor"></a>kowr</h1></div>
@@ -100,7 +85,7 @@ figcaption {
 <div id="load-the-package" class="section level3">
 <h3 class="hasAnchor">
 <a href="#load-the-package" class="anchor"></a>Load the Package</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(kowr)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(kowr)</a></code></pre></div>
 <hr>
 </div>
 <div id="back_to_forward" class="section level3">
@@ -110,14 +95,14 @@ figcaption {
 <p>Example file path saved in clipboard: <code>C:\Documents\Newsletters\Summer2018.csv</code></p>
 <div id="option-1-run-back_to_forward-in-the-console" class="section level4">
 <h4 class="hasAnchor">
-<a href="#option-1-run-back_to_forward-in-the-console" class="anchor"></a>Option 1) Run <code><a href="reference/back_to_forward.html">back_to_forward()</a></code> in the Console</h4>
+<a href="#option-1-run-back_to_forward-in-the-console" class="anchor"></a>Option 1) Run <code>back_to_forward()</code> in the Console</h4>
 <p>Run <code><a href="reference/back_to_forward.html">back_to_forward()</a></code> in the console. This will output a string with forward slashes.</p>
 </div>
 <div id="option-2-attatch-back_to_forward-to-a-hotkey" class="section level4">
 <h4 class="hasAnchor">
-<a href="#option-2-attatch-back_to_forward-to-a-hotkey" class="anchor"></a>Option 2) Attatch <code><a href="reference/back_to_forward.html">back_to_forward()</a></code> to a Hotkey</h4>
+<a href="#option-2-attatch-back_to_forward-to-a-hotkey" class="anchor"></a>Option 2) Attatch <code>back_to_forward()</code> to a Hotkey</h4>
 <p><code><a href="reference/back_to_forward.html">back_to_forward()</a></code> is also an add-in called <code>Back to Forward Slash</code>. In RStudio near the top click <code>Addins</code> and you will see the <code>kowr</code> package with the add-in. If you click this add-in it will paste the file path wherever your cursor is located within RStudio. This is not the most ideal way to use this. Since backward_to_forward() is an add-in we can assign the add-in <code>Back to Forward Slash</code> to a hotkey.</p>
-<ol style="list-style-type: decimal">
+<ol>
 <li>Go to <code>Tools &gt; Modify Keyboard Shortcuts...</code> in RStudio</li>
 <li>Sort by <em>Name</em> and find <code>Back to Forward Slash</code>
 </li>
@@ -143,14 +128,16 @@ figcaption {
 <a href="#clear_plotly_options" class="anchor"></a>clear_plotly_options()</h3>
 <div id="default-plot_ly-output" class="section level5">
 <h5 class="hasAnchor">
-<a href="#default-plot_ly-output" class="anchor"></a>Default <code><a href="https://www.rdocumentation.org/packages/plotly/topics/plot_ly">plot_ly()</a></code> output:</h5>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(plotly)</a>
+<a href="#default-plot_ly-output" class="anchor"></a>Default <code>plot_ly()</code> output:</h5>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(plotly)</a>
 <a class="sourceLine" id="cb3-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb3-3" data-line-number="3">p &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/plotly/topics/plot_ly">plot_ly</a></span>(<span class="dt">data =</span> mtcars, <span class="dt">x =</span> <span class="op">~</span>mpg, <span class="dt">y =</span> <span class="op">~</span>hp, <span class="dt">type =</span> <span class="st">"scatter"</span>, <span class="dt">mode =</span> <span class="st">"markers"</span>)</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3">p &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/pkg/plotly/man/plot_ly.html">plot_ly</a></span>(<span class="dt">data =</span> mtcars, <span class="dt">x =</span> <span class="op">~</span>mpg, <span class="dt">y =</span> <span class="op">~</span>hp, <span class="dt">type =</span> <span class="st">"scatter"</span>, <span class="dt">mode =</span> <span class="st">"markers"</span>)</a>
 <a class="sourceLine" id="cb3-4" data-line-number="4"></a>
 <a class="sourceLine" id="cb3-5" data-line-number="5">p</a></code></pre></div>
 <figure><img class="r-img" src="https://i.imgur.com/Xavhnzb.png"><figcaption>
+
 Due to the README format, images are screenshots
+
 </figcaption></figure>
 </div>
 <div id="remove-all-buttons-on-top-of-the-plot" class="section level5">
@@ -164,7 +151,7 @@ Due to the README format, images are screenshots
 <h5 class="hasAnchor">
 <a href="#keep-zoom-in-and-zoom-out-buttons" class="anchor"></a>Keep “Zoom in” and “Zoom out” buttons:</h5>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">p <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="reference/clear_plotly_options.html">clear_plotly_options</a></span>(<span class="dt">buttons_to_keep =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"zoomIn2d"</span>, <span class="st">"zoomOut2d"</span>))</a></code></pre></div>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="reference/clear_plotly_options.html">clear_plotly_options</a></span>(<span class="dt">buttons_to_keep =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"zoomIn2d"</span>, <span class="st">"zoomOut2d"</span>))</a></code></pre></div>
 <p><img class="r-img" src="https://i.imgur.com/7DovA32.png"></p>
 </div>
 <div id="arguments-1" class="section level4">
@@ -246,11 +233,11 @@ Due to the README format, images are screenshots
 <a href="#snake_to" class="anchor"></a>snake_to()</h3>
 <p>This is useful for when the user wants to use the columns in a representative way. Shiny, Power BI, and RMarkdown are use cases where we may want clean column names for the user to read.</p>
 <p>I find myself using <code><a href="https://stringr.tidyverse.org/reference/case.html">stringr::str_to_title()</a></code> for a clean way of presenting columns in documents and dashboards. This is the reason the default argument for <code>snake_to</code>’s output is “title”.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">dat &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/data.frame">data.frame</a></span>(</a>
-<a class="sourceLine" id="cb9-2" data-line-number="2">  <span class="dt">lol_game    =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>),</a>
-<a class="sourceLine" id="cb9-3" data-line-number="3">  <span class="dt">lollipop    =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>),</a>
-<a class="sourceLine" id="cb9-4" data-line-number="4">  <span class="dt">thirdColumn =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"q"</span>, <span class="st">"w"</span>, <span class="st">"e"</span>),</a>
-<a class="sourceLine" id="cb9-5" data-line-number="5">  <span class="dt">average_dps =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">14</span>)</a>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">dat &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(</a>
+<a class="sourceLine" id="cb9-2" data-line-number="2">  <span class="dt">lol_game    =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>),</a>
+<a class="sourceLine" id="cb9-3" data-line-number="3">  <span class="dt">lollipop    =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>),</a>
+<a class="sourceLine" id="cb9-4" data-line-number="4">  <span class="dt">thirdColumn =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"q"</span>, <span class="st">"w"</span>, <span class="st">"e"</span>),</a>
+<a class="sourceLine" id="cb9-5" data-line-number="5">  <span class="dt">average_dps =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">14</span>)</a>
 <a class="sourceLine" id="cb9-6" data-line-number="6">)</a>
 <a class="sourceLine" id="cb9-7" data-line-number="7"></a>
 <a class="sourceLine" id="cb9-8" data-line-number="8">dat <span class="op">%&gt;%</span></a>
@@ -279,7 +266,7 @@ Due to the README format, images are screenshots
 <div id="title-case-and-capitalize-the-acronyms" class="section level5">
 <h5 class="hasAnchor">
 <a href="#title-case-and-capitalize-the-acronyms" class="anchor"></a>Title case and capitalize the acronyms</h5>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">acronyms =<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"lol"</span>, <span class="st">"dps"</span>)</a>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">acronyms =<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"lol"</span>, <span class="st">"dps"</span>)</a>
 <a class="sourceLine" id="cb12-2" data-line-number="2">dat <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb12-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="reference/snake_to.html">snake_to</a></span>(<span class="dt">acronyms =</span> acronyms)</a>
 <a class="sourceLine" id="cb12-4" data-line-number="4"><span class="co">#&gt;   LOL Game Lollipop Thirdcolumn Average DPS</span></a>
@@ -291,7 +278,7 @@ Due to the README format, images are screenshots
 <h5 class="hasAnchor">
 <a href="#ggplot-titles" class="anchor"></a>ggplot titles:</h5>
 <p><code><a href="reference/snake_to.html">snake_to()</a></code> will also clean up ggplot <em>x</em> and <em>y</em> axes. Pipe the saved ggplot object into <code><a href="reference/snake_to.html">snake_to()</a></code> and it will clean up snake case titles. There is also an options for <code>ggplot_title</code>; when true this will create a title on the plot “Relation Between <em>x</em> and <em>y</em>”. If there is a legend the title will be capitalized using <code>str_to_title()</code>.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(ggplot2)</a>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(ggplot2)</a>
 <a class="sourceLine" id="cb13-2" data-line-number="2"></a>
 <a class="sourceLine" id="cb13-3" data-line-number="3">p &lt;-<span class="st"> </span>dat <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb13-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">x =</span> lollipop, <span class="dt">y =</span> lol_game)) <span class="op">+</span></a>
@@ -376,7 +363,7 @@ Due to the README format, images are screenshots
 </ul>
 </div>
 
-      <div class="dev-status">
+  <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://github.com/ellerbrock/open-source-badges/"><img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103" alt="Open Source Love svg1"></a></li>
@@ -387,7 +374,6 @@ Due to the README format, images are screenshots
 </ul>
 </div>
 </div>
-
 </div>
 
 
@@ -396,12 +382,14 @@ Due to the README format, images are screenshots
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
 </div>
+
       </footer>
 </div>
 
   
+
 
   </body>
 </html>
