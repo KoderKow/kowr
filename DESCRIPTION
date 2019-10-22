@@ -16,7 +16,9 @@ Imports:
     rstudioapi,
     stringr,
     purrr,
-    ggplot2
+    ggplot2,
+    xml2 (>= 1.2.0),
+    utils (>= 3.6.1)
 Suggests: 
     testthat (>= 2.1.0),
     covr,
