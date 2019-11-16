@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Remove Plotly Options — clear_plotly_options • kowr</title>
+<title>Get Plotly's Facet X &amp; Y Axis Title Values — get_plotly_facet_axis_titles_values • kowr</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,8 @@
 
 
 
-<meta property="og:title" content="Remove Plotly Options — clear_plotly_options" />
-<meta property="og:description" content="Shortcut for removing the options on the top of a plotly plot." />
+<meta property="og:title" content="Get Plotly's Facet X &amp; Y Axis Title Values — get_plotly_facet_axis_titles_values" />
+<meta property="og:description" content="Credit: https://github.com/ropensci/plotly/issues/1224" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -105,72 +105,37 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Remove Plotly Options</h1>
+    <h1>Get Plotly's Facet X &amp; Y Axis Title Values</h1>
     <small class="dont-index">Source: <a href='https://github.com/KoderKow/kowr/blob/master/R/plotly_functions.R'><code>R/plotly_functions.R</code></a></small>
-    <div class="hidden name"><code>clear_plotly_options.Rd</code></div>
+    <div class="hidden name"><code>get_plotly_facet_axis_titles_values.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Shortcut for removing the options on the top of a plotly plot.</p>
+    <p>Credit: https://github.com/ropensci/plotly/issues/1224</p>
     </div>
 
-    <pre class="usage"><span class='fu'>clear_plotly_options</span>(<span class='no'>plotly_object</span>, <span class='kw'>buttons_to_keep</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>keep_logo</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>get_plotly_facet_axis_titles_values</span>(<span class='no'>p</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>plotly_object</th>
+      <th>p</th>
       <td><p>A plotly object.</p></td>
-    </tr>
-    <tr>
-      <th>buttons_to_keep</th>
-      <td><p>A string. Default is `NULL`. Use a vector of strings for multiple buttons to keep. Below is a list of items with the plotly code that corresponds to the text displayed on the plotly plot when hovering over the buttons.</p><ul>
-<li><p>toImage: Download plot as a png</p></li>
-<li><p>zoom2d: Zoom</p></li>
-<li><p>pan2d: Pan</p></li>
-<li><p>select2d: Box Select</p></li>
-<li><p>lasso2d: Lasso Select</p></li>
-<li><p>zoomIn2d: Zoom in</p></li>
-<li><p>zoomOut2d: Zoom out</p></li>
-<li><p>autoScale2d: Autoscale</p></li>
-<li><p>resetScale2d: Reset axes</p></li>
-<li><p>toggleSpikelines: Toggle Spike Lines</p></li>
-<li><p>hoverClosestCartesian: Show closest data on hover</p></li>
-<li><p>hoverCompareCartesian: Compare data on hover</p></li>
-</ul></td>
-    </tr>
-    <tr>
-      <th>keep_logo</th>
-      <td><p>A logical. Default is `FALSE`. Set to `TRUE`` to keep the "Produced with Plotly" button located in the top right of the plot.</p></td>
     </tr>
     </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>A plotly object.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='co'># remove all options</span>
 <span class='no'>p</span> <span class='kw'>%&gt;%</span>
-  <span class='fu'>clear_plotly_options</span>()
-
-<span class='co'># keep Download plot as a png button</span>
-<span class='no'>p</span> <span class='kw'>%&gt;%</span>
-  <span class='fu'>clear_plotly_options</span>(<span class='kw'>buttons_to_keep</span> <span class='kw'>=</span> <span class='st'>"toImage"</span>)
-
-<span class='co'># keep zoom in and zoom out buttons</span>
-<span class='no'>p</span> <span class='kw'>%&gt;%</span>
-  <span class='fu'>clear_plotly_options</span>(<span class='kw'>buttons_to_keep</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"zoomIn2d"</span>, <span class='st'>"zoomOut2d"</span>))
+  <span class='fu'>get_plotly_axis_title_values</span>()
 }</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
       <li><a href="#examples">Examples</a></li>
     </ul>
 
