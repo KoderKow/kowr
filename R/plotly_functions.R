@@ -50,3 +50,53 @@ clear_plotly_options <- function(plotly_object, buttons_to_keep = NULL, keep_log
       modeBarButtonsToRemove = remove_buttons
     )
 }
+
+#' Get Plotly's Facet X & Y Axis Title Values
+#'
+#' Credit: https://github.com/ropensci/plotly/issues/1224
+#'
+#' @param p A plotly object.
+#'
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' p %>%
+#'   get_plotly_axis_title_values()
+#' }
+get_plotly_facet_axis_titles_values <- function(p) {
+  x <- p$x$layout$annotations[[1]]$y
+  y <- p$x$layout$annotations[[2]]$x
+
+  list(
+    x = x,
+    y = y
+  )
+}
+
+#' Adjust Location of Plotly's Facet X & Y Axis Titles
+#'
+#' Credit: https://github.com/ropensci/plotly/issues/1224
+#'
+#' @param p A plotly object.
+#' @param x A numeric. Value to place x-axis title on a plotly object. Use \code{get_plotly_axis_titles_values()} to get the objects current value as a reference.
+#' @param y A numeric. Value to place y-axis title on a plotly object. Use \code{get_plotly_axis_titles_values()} to get the objects current value as a reference.
+#'
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' p %>%
+#'   adjust_plotly_axis_titles(x = -0.15)
+#' }
+adjust_plotly_facet_axis_titles <- function(p, x = NULL, y = NULL) {
+  if (!is.null(x)) {
+    p$x$layout$annotations[[1]]$y <- x
+  }
+
+  if (!is.null(y)) {
+    p$x$layout$annotations[[2]]$x <- y
+  }
+
+  p
+}
