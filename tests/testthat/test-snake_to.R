@@ -91,7 +91,11 @@ test_that("names_only and ggplot error", {
   expect_error(p %>% snake_to(names_only = TRUE))
 })
 
-test_that("data.frame and ggplot classes only", {
+test_that("character vectors", {
+  expect_equal(c("hey_u") %>% snake_to(), "Hey U")
+})
+
+test_that("numeric vector error", {
   expect_error(c(1, 2, 3) %>% snake_to())
 })
 
