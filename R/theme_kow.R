@@ -8,7 +8,7 @@ theme_kow <- function(base_size = 12, base_family = "sans") {
 
   kow_black <- "#1A1A1A"
   kow_light_black <- "#404040"
-  kow_light_grey <- "#666666"
+  kow_light_grey <- "#d9d9d9"
 
   update_geom(c("col", "bar", "boxplot", "point"))
 
@@ -91,12 +91,22 @@ theme_kow <- function(base_size = 12, base_family = "sans") {
 kow_colors <- function() {
   list(
     theme = c(
-      blue = "#b0d8ed",
-      pink = "#edb0d8",
-      green = "#d8edb0",
-      purple = "#b0baed",
-      teal = "#b0ede4",
-      orange = "#edc5b0"
+      sunset_orange = "#f25f5c",
+      lapis_lazuli = "#247ba0",
+      green_sheen = "#70c1b3",
+      mustard = "#ffe066",
+      deep_koamaru = "#3b3561",
+      dark_liver = "#50514f",
+      sweet_brown = "#ac3931",
+      slate_blue = "#6369d1",
+      dark_sea_green = "#83b692",
+      flax = "#e9d985",
+      ucla_blue = "#586994",
+      tulip = "#fe938c",
+      livid = "#6699cc",
+      nadeshiko_pink = "#edadc7",
+      paynes_grey = "#546a76",
+      mindaro = "#dbfe87"
     ),
     text_colors = c(
       black = "#1A1A1A",
@@ -142,13 +152,13 @@ update_geom <- function(geom) {
       geom = .x,
       new = if (.x == "point") {
         list(
-          alpha = 0.8,
+          alpha = 0.9,
           size = 3
         )
       } else {
         list(
           color = "#1A1A1A",
-          alpha = 0.8
+          alpha = 0.9
         )
       }
     )
