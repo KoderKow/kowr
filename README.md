@@ -10,8 +10,6 @@ svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.c
 [![made-with-R](https://img.shields.io/badge/Made%20with-R-1f425f.svg)](https://www.r-project.org/)
 [![Travis build
 status](https://travis-ci.org/KoderKow/kowr.svg?branch=master)](https://travis-ci.org/KoderKow/kowr)
-[![AppVeyor build
-status](https://ci.appveyor.com/api/projects/status/github/KoderKow/kowr?branch=master&svg=true)](https://ci.appveyor.com/project/KoderKow/kowr)
 [![Codecov test
 coverage](https://codecov.io/gh/KoderKow/kowr/branch/master/graph/badge.svg)](https://codecov.io/gh/KoderKow/kowr?branch=master)
 <!-- badges: end -->
