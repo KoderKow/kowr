@@ -1,6 +1,6 @@
 #' Silence the Haters
 #'
-#' For situations when you want to mute \strong{known} warnings or messages in a \code({dplyr}) chain.
+#' For situations when you want to mute \strong{known} warnings or messages in a {dplyr} chain.
 #'
 #' @param lhs A value or the magrittr placeholder.
 #' @param rhs A function call using the magrittr semantics.
@@ -12,7 +12,7 @@
 #'   data %shh%
 #'     readr::type_convert()
 #' }
-`%shh%` <- function(lhs, rhs){
+`%shh%` <- function(lhs, rhs) {
   w <- options()$warn
   on.exit(options(warn = w))
   options(warn = -1)

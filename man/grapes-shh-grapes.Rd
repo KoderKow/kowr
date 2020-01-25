@@ -12,7 +12,7 @@ lhs \%shh\% rhs
 \item{rhs}{A function call using the magrittr semantics.}
 }
 \description{
-For situations when you want to mute \strong{known} warnings or messages in a \code({dplyr}) chain.
+For situations when you want to mute \strong{known} warnings or messages in a {dplyr} chain.
 }
 \examples{
 \dontrun{
