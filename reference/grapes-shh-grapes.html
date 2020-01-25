@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Remove Snake Case — snake_to • kowr</title>
+<title>Silence the Haters — %shh% • kowr</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,8 @@
 
 
 
-<meta property="og:title" content="Remove Snake Case — snake_to" />
-<meta property="og:description" content="This is useful for when the user wants to use the columns in a presentation. Shiny, Power BI, and RMarkdown are use cases where we may want clean column names for the user to read." />
+<meta property="og:title" content="Silence the Haters — %shh%" />
+<meta property="og:description" content="For situations when you want to mute known warnings or messages in a dplyr chain." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -108,83 +108,41 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Remove Snake Case</h1>
-    <small class="dont-index">Source: <a href='https://github.com/KoderKow/kowr/blob/master/R/snake_to.R'><code>R/snake_to.R</code></a></small>
-    <div class="hidden name"><code>snake_to.Rd</code></div>
+    <h1>Silence the Haters</h1>
+    <small class="dont-index">Source: <a href='https://github.com/KoderKow/kowr/blob/master/R/silience_the_haters.R'><code>R/silience_the_haters.R</code></a></small>
+    <div class="hidden name"><code>grapes-shh-grapes.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This is useful for when the user wants to use the columns in a presentation. Shiny, Power BI, and RMarkdown are use cases where we may want clean column names for the user to read.</p>
+    <p>For situations when you want to mute <strong>known</strong> warnings or messages in a dplyr chain.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>snake_to</span>(
-  <span class='no'>object</span>,
-  <span class='kw'>format</span> <span class='kw'>=</span> <span class='st'>"title"</span>,
-  <span class='kw'>acronyms</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>names_only</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>ggplot_title</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>
-)</pre>
+    <pre class="usage"><span class='no'>lhs</span> <span class='kw'>%shh%</span> <span class='no'>rhs</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>object</th>
-      <td><p>A data.frame, ggplot or character vector object. A data.frame will have transformed column names. A ggplot object will have transformed X and Y axes. A character vector will have clean character names.</p></td>
+      <th>lhs</th>
+      <td><p>A value or the magrittr placeholder.</p></td>
     </tr>
     <tr>
-      <th>format</th>
-      <td><p>A string. The desired target (default is "title") case with options including:</p><ul>
-<li><p>`"title"` produces title case</p></li>
-<li><p>`"lower"` produces lower case</p></li>
-<li><p>`"normal"` do not transform the string</p></li>
-<li><p>`"sentence"` produces sentence case</p></li>
-<li><p>`"upper"` produces upper case</p></li>
-</ul></td>
-    </tr>
-    <tr>
-      <th>acronyms</th>
-      <td><p>A Character. Default `NULL`. For when acronyms exist in the column names that need to be capitalized. Pass a character vector for when there is more than one acronym. Upper and/or lower case acronyms in this parameter will be accepted. This will only capitalize the wanted words, words that may contain the acronyms letter will NOT be capitalized.</p></td>
-    </tr>
-    <tr>
-      <th>names_only</th>
-      <td><p>A Logical. Default `FALSE`. If `TRUE`, `snake_to()` will return a vector of transformed column names.</p></td>
-    </tr>
-    <tr>
-      <th>ggplot_title</th>
-      <td><p>A Logical. Default `FALSE`. If `TRUE`, `snake_to()` will add a title to the ggplot object that refelcts the clean X and Y axes.</p></td>
+      <th>rhs</th>
+      <td><p>A function call using the magrittr semantics.</p></td>
     </tr>
     </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>Returns a data.frame with clean names, a ggplot object with clean axes, or a vector of clean strings.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='co'># snake to title</span>
-<span class='no'>.data</span> <span class='kw'>%&gt;%</span>
-  <span class='fu'>snake_to</span>()
-
-<span class='co'># snake to sentence</span>
-<span class='no'>.data</span> <span class='kw'>%&gt;%</span>
-  <span class='fu'>snake_to</span>(<span class='kw'>format</span> <span class='kw'>=</span> <span class='st'>"sentence"</span>)
-
-<span class='co'># snake to title, keep vector of transformed column names</span>
-<span class='no'>.data</span> <span class='kw'>%&gt;%</span>
-  <span class='fu'>snake_to</span>(<span class='kw'>names_only</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
-
-<span class='co'># snake to title, capitalize acronyms</span>
-<span class='no'>acronyms</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"pyr"</span>, <span class='st'>"cyr"</span>)
-<span class='no'>.data</span> <span class='kw'>%&gt;%</span>
-  <span class='fu'>snake_to</span>(<span class='kw'>acronyms</span> <span class='kw'>=</span> <span class='no'>acronyms</span>)
+  <span class='no'>data</span> <span class='kw'>%shh%</span>
+    <span class='kw pkg'>readr</span><span class='kw ns'>::</span><span class='fu'>type_convert</span>()
 }</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
       <li><a href="#examples">Examples</a></li>
     </ul>
 
