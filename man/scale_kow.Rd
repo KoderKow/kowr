@@ -51,12 +51,12 @@ as output
 }}
   \item{expand}{Vector of range expansion constants used to add some
 padding around the data, to ensure that they are placed some distance
-away from the axes. Use the convenience function \code{\link[=expand_scale]{expand_scale()}}
+away from the axes. Use the convenience function \code{\link[ggplot2:expand_scale]{expand_scale()}}
 to generate the values for the \code{expand} argument. The defaults are to
 expand the scale by 5\% on each side for continuous variables, and by
 0.6 units on each side for discrete variables.}
   \item{guide}{A function used to create a guide or its name. See
-\code{\link[=guides]{guides()}} for more info.}
+\code{\link[ggplot2:guides]{guides()}} for more info.}
   \item{position}{The position of the axis. "left" or "right" for vertical
 scales, "top" or "bottom" for horizontal scales}
   \item{super}{The super class to use for the constructed scale}
@@ -66,6 +66,7 @@ scales, "top" or "bottom" for horizontal scales}
 Kow Color Scales
 }
 \seealso{
-Other colour kow: \code{\link{kow_pallette}}
+Other colour kow: 
+\code{\link{kow_pallette}()}
 }
 \concept{colour kow}

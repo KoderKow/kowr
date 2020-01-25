@@ -11,6 +11,7 @@ Color palettes for me.
 This palette includes 7 colors.
 }
 \seealso{
-Other colour kow: \code{\link{scale_color_kow}}
+Other colour kow: 
+\code{\link{scale_color_kow}()}
 }
 \concept{colour kow}

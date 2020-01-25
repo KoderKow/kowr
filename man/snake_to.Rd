@@ -4,8 +4,13 @@
 \alias{snake_to}
 \title{Remove Snake Case}
 \usage{
-snake_to(object, format = "title", acronyms = NULL,
-  names_only = FALSE, ggplot_title = FALSE)
+snake_to(
+  object,
+  format = "title",
+  acronyms = NULL,
+  names_only = FALSE,
+  ggplot_title = FALSE
+)
 }
 \arguments{
 \item{object}{A data.frame, ggplot or character vector object. A data.frame will have transformed column names. A ggplot object will have transformed X and Y axes. A character vector will have clean character names.}

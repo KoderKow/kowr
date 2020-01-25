@@ -23,7 +23,7 @@ Primarily for Windows users. When copying file paths in Windows it will use a ba
 \examples{
 \dontrun{
 # Example path in clipboard:
-# C:\\Documents\\Newsletters\\Summer2018.csv
+# C:\Documents\Newsletters\Summer2018.csv
 back_to_forward()
 }
 }

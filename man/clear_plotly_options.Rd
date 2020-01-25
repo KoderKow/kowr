@@ -4,8 +4,7 @@
 \alias{clear_plotly_options}
 \title{Remove Plotly Options}
 \usage{
-clear_plotly_options(plotly_object, buttons_to_keep = NULL,
-  keep_logo = FALSE)
+clear_plotly_options(plotly_object, buttons_to_keep = NULL, keep_logo = FALSE)
 }
 \arguments{
 \item{plotly_object}{A plotly object.}
