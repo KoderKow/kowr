@@ -1,4 +1,10 @@
 Name: Back to Forward Slash
-Description: Change backshlash (\) to forward slash (/) for the item in the users clipboard
+Description: Change backshlash (\) to forward slash (/) for the item in the users clipboard.
 Binding: back_to_forward
 Interactive: false
+
+Name: A Function's Home
+Description: Guesses which package the selected function comes from. Note: Favors tidyverse packages.
+Binding: guess_a_functions_package
+Interactive: false
+
