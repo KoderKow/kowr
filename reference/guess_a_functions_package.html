@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Silence the Haters — %shh% • kowr</title>
+<title>Where is your home? — guess_a_functions_package • kowr</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Silence the Haters — %shh%" />
-<meta property="og:description" content="For situations when you want to mute known warnings or messages in a dplyr chain." />
+<meta property="og:title" content="Where is your home? — guess_a_functions_package" />
+<meta property="og:description" content="The primary use for this function is for its functionality via addin. The addin can be added as a shortcut; I set it as CMD+; for Mac and CTRL+; for Windows. This will search for possible packages a function belongs to, similar to `?function`. If there are multiple packages that have the same function, this function will favor any of tidyverse packages. This is due to myself generally using the tidyverse functions. If there are multiple tidyverse matchse, it picks the first package based on its alphabetic positioning. If there are no tidyverse packages and other packages, it will still pick the first package that shows up alphabetically." />
 
 
 
@@ -111,29 +111,17 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Silence the Haters</h1>
-    <small class="dont-index">Source: <a href='https://github.com/KoderKow/kowr/blob/master/R/utils.R'><code>R/utils.R</code></a></small>
-    <div class="hidden name"><code>quiet_pipe.Rd</code></div>
+    <h1>Where is your home?</h1>
+    <small class="dont-index">Source: <a href='https://github.com/KoderKow/kowr/blob/master/R/guess_a_functions_package.R'><code>R/guess_a_functions_package.R</code></a></small>
+    <div class="hidden name"><code>guess_a_functions_package.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>For situations when you want to mute <strong>known</strong> warnings or messages in a dplyr chain.</p>
+    <p>The primary use for this function is for its functionality via addin. The addin can be added as a shortcut; I set it as CMD+; for Mac and CTRL+; for Windows. This will search for possible packages a function belongs to, similar to `?function`. If there are multiple packages that have the same function, this function will favor any of tidyverse packages. This is due to myself generally using the tidyverse functions. If there are multiple tidyverse matchse, it picks the first package based on its alphabetic positioning. If there are no tidyverse packages and other packages, it will still pick the first package that shows up alphabetically.</p>
     </div>
 
-    <pre class="usage"><span class='no'>lhs</span> <span class='kw'>%shh%</span> <span class='no'>rhs</span></pre>
+    <pre class="usage"><span class='fu'>guess_a_functions_package</span>()</pre>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>lhs</th>
-      <td><p>A value or the magrittr placeholder.</p></td>
-    </tr>
-    <tr>
-      <th>rhs</th>
-      <td><p>A function call using the magrittr semantics.</p></td>
-    </tr>
-    </table>
 
 
   </div>

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Silence the Haters — %shh% • kowr</title>
+<title>Simple summary of a character type variable — summary_character • kowr</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Silence the Haters — %shh%" />
-<meta property="og:description" content="For situations when you want to mute known warnings or messages in a dplyr chain." />
+<meta property="og:title" content="Simple summary of a character type variable — summary_character" />
+<meta property="og:description" content="Simple summary of a character type variable" />
 
 
 
@@ -111,30 +111,37 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Silence the Haters</h1>
-    <small class="dont-index">Source: <a href='https://github.com/KoderKow/kowr/blob/master/R/utils.R'><code>R/utils.R</code></a></small>
-    <div class="hidden name"><code>quiet_pipe.Rd</code></div>
+    <h1>Simple summary of a character type variable</h1>
+    <small class="dont-index">Source: <a href='https://github.com/KoderKow/kowr/blob/master/R/summary_character.R'><code>R/summary_character.R</code></a></small>
+    <div class="hidden name"><code>summary_character.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>For situations when you want to mute <strong>known</strong> warnings or messages in a dplyr chain.</p>
+    <p>Simple summary of a character type variable</p>
     </div>
 
-    <pre class="usage"><span class='no'>lhs</span> <span class='kw'>%shh%</span> <span class='no'>rhs</span></pre>
+    <pre class="usage"><span class='fu'>summary_character</span>(<span class='no'>.data</span>, <span class='no'>.col</span>, <span class='kw'>round</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>lhs</th>
-      <td><p>A value or the magrittr placeholder.</p></td>
+      <th>.data</th>
+      <td><p>A tbl.</p></td>
     </tr>
     <tr>
-      <th>rhs</th>
-      <td><p>A function call using the magrittr semantics.</p></td>
+      <th>.col</th>
+      <td><p>A character column that will be summarized</p></td>
+    </tr>
+    <tr>
+      <th>round</th>
+      <td><p>A logical. If `TRUE`, the default, it will round all decimals to the hundredths position.</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A summarized tbl.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
