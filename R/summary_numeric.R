@@ -8,7 +8,6 @@
 #'
 #' @return A summarized tbl
 #' @export
-
 summary_numeric <- function(.data, .col, round = TRUE) {
 
   enquo_col <- rlang::enquo(.col)

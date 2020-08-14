@@ -3,7 +3,7 @@
 #' @param .data A tbl.
 #' @param .col A character column that will be summarized
 #' @param round A logical. If `TRUE`, the default, it will round all decimals to the hundredths position.
-#'
+
 #' @return A summarized tbl.
 #' @export
 summary_character <- function(.data, .col, round = TRUE) {
