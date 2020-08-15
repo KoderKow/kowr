@@ -14,6 +14,7 @@ summarize_variable <- function(.data, .col, round = TRUE) {
 
   data_type <-
     .data %>%
+    dplyr::ungroup() %>%
     dplyr::select(!!enquo_col) %>%
     purrr::map(class) %>%
     purrr::pluck(1)
