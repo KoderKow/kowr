@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Simple summary of a character type variable — summary_character • kowr</title>
+<title>Simple summary of a numeric type variable — summarize_variable • kowr</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Simple summary of a character type variable — summary_character" />
-<meta property="og:description" content="Simple summary of a character type variable" />
+<meta property="og:title" content="Simple summary of a numeric type variable — summarize_variable" />
+<meta property="og:description" content="If the column is numeric or a date this function will return the min, Q1, median (Q2), Q3, max, mean, sd (only for numeric and interger), and count of missing data. If data type is of character or factor, a count of the character will be returned alonged with p (percent of column, or group if `dplyr::group_by()` is passed) and a formatted p for a clean presentation in plots and/or tables." />
 
 
 
@@ -111,16 +111,16 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Simple summary of a character type variable</h1>
-    <small class="dont-index">Source: <a href='https://github.com/KoderKow/kowr/blob/master/R/summary_character.R'><code>R/summary_character.R</code></a></small>
-    <div class="hidden name"><code>summary_character.Rd</code></div>
+    <h1>Simple summary of a numeric type variable</h1>
+    <small class="dont-index">Source: <a href='https://github.com/KoderKow/kowr/blob/master/R/summarize_variable.R'><code>R/summarize_variable.R</code></a></small>
+    <div class="hidden name"><code>summarize_variable.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Simple summary of a character type variable</p>
+    <p>If the column is numeric or a date this function will return the min, Q1, median (Q2), Q3, max, mean, sd (only for numeric and interger), and count of missing data. If data type is of character or factor, a count of the character will be returned alonged with p (percent of column, or group if `dplyr::group_by()` is passed) and a formatted p for a clean presentation in plots and/or tables.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>summary_character</span>(<span class='no'>.data</span>, <span class='no'>.col</span>, <span class='kw'>round</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>summarize_variable</span>(<span class='no'>.data</span>, <span class='no'>.col</span>, <span class='kw'>round</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -131,7 +131,7 @@
     </tr>
     <tr>
       <th>.col</th>
-      <td><p>A character column that will be summarized</p></td>
+      <td><p>A numeric column that will be summarized</p></td>
     </tr>
     <tr>
       <th>round</th>
@@ -141,7 +141,7 @@
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A summarized tbl.</p>
+    <p>A summarized tbl</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
