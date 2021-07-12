@@ -9,23 +9,23 @@ clear_plotly_options(plotly_object, buttons_to_keep = NULL, keep_logo = FALSE)
 \arguments{
 \item{plotly_object}{A plotly object.}
 
-\item{buttons_to_keep}{A string. Default is `NULL`. Use a vector of strings for multiple buttons to keep. Below is a list of items with the plotly code that corresponds to the text displayed on the plotly plot when hovering over the buttons.
+\item{buttons_to_keep}{A string. Default is \code{NULL}. Use a vector of strings for multiple buttons to keep. Below is a list of items with the plotly code that corresponds to the text displayed on the plotly plot when hovering over the buttons.
 \itemize{
-  \item toImage: Download plot as a png
-  \item zoom2d: Zoom
-  \item pan2d: Pan
-  \item select2d: Box Select
-  \item lasso2d: Lasso Select
-  \item zoomIn2d: Zoom in
-  \item zoomOut2d: Zoom out
-  \item autoScale2d: Autoscale
-  \item resetScale2d: Reset axes
-  \item toggleSpikelines: Toggle Spike Lines
-  \item hoverClosestCartesian: Show closest data on hover
-  \item hoverCompareCartesian: Compare data on hover
+\item toImage: Download plot as a png
+\item zoom2d: Zoom
+\item pan2d: Pan
+\item select2d: Box Select
+\item lasso2d: Lasso Select
+\item zoomIn2d: Zoom in
+\item zoomOut2d: Zoom out
+\item autoScale2d: Autoscale
+\item resetScale2d: Reset axes
+\item toggleSpikelines: Toggle Spike Lines
+\item hoverClosestCartesian: Show closest data on hover
+\item hoverCompareCartesian: Compare data on hover
 }}
 
-\item{keep_logo}{A logical. Default is `FALSE`. Set to `TRUE`` to keep the "Produced with Plotly" button located in the top right of the plot.}
+\item{keep_logo}{A logical. Default is \code{FALSE}. Set to `TRUE`` to keep the "Produced with Plotly" button located in the top right of the plot.}
 }
 \value{
 A plotly object.

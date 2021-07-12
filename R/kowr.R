@@ -6,5 +6,8 @@ if (getRversion() >= "2.15.1") {
 }
 
 # attachment::att_amend_desc(
-#   extra.suggests = attachment::att_from_rscripts("tests")
+#   extra.suggests = c(
+#     attachment::att_from_rscripts("tests"),
+#     "markdown"
+#     )
 # )

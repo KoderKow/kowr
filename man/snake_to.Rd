@@ -17,18 +17,18 @@ snake_to(
 
 \item{format}{A string. The desired target (default is "title") case with options including:
 \itemize{
- \item{`"title"` produces title case}
- \item{`"lower"` produces lower case}
- \item{`"normal"` do not transform the string}
- \item{`"sentence"` produces sentence case}
- \item{`"upper"` produces upper case}
- }}
+\item{\code{"title"} produces title case}
+\item{\code{"lower"} produces lower case}
+\item{\code{"normal"} do not transform the string}
+\item{\code{"sentence"} produces sentence case}
+\item{\code{"upper"} produces upper case}
+}}
 
-\item{acronyms}{A Character. Default `NULL`. For when acronyms exist in the column names that need to be capitalized. Pass a character vector for when there is more than one acronym. Upper and/or lower case acronyms in this parameter will be accepted. This will only capitalize the wanted words, words that may contain the acronyms letter will NOT be capitalized.}
+\item{acronyms}{A Character. Default \code{NULL}. For when acronyms exist in the column names that need to be capitalized. Pass a character vector for when there is more than one acronym. Upper and/or lower case acronyms in this parameter will be accepted. This will only capitalize the wanted words, words that may contain the acronyms letter will NOT be capitalized.}
 
-\item{names_only}{A Logical. Default `FALSE`. If `TRUE`, `snake_to()` will return a vector of transformed column names.}
+\item{names_only}{A Logical. Default \code{FALSE}. If \code{TRUE}, \code{snake_to()} will return a vector of transformed column names.}
 
-\item{ggplot_title}{A Logical. Default `FALSE`. If `TRUE`, `snake_to()` will add a title to the ggplot object that refelcts the clean X and Y axes.}
+\item{ggplot_title}{A Logical. Default \code{FALSE}. If \code{TRUE}, \code{snake_to()} will add a title to the ggplot object that refelcts the clean X and Y axes.}
 }
 \value{
 Returns a data.frame with clean names, a ggplot object with clean axes, or a vector of clean strings.

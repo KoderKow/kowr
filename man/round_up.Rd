@@ -11,9 +11,9 @@ round_up(x, format = "normal")
 
 \item{format}{A boolean. Takes three different options to round up and stylize:
 \itemize{
-  \item normal: The default, return the number with no formatting.
-  \item dollar: Return the number with a leading dollar sign along with commas.
-  \item comma: Return the number with commas.
+\item normal: The default, return the number with no formatting.
+\item dollar: Return the number with a leading dollar sign along with commas.
+\item comma: Return the number with commas.
 }}
 }
 \value{

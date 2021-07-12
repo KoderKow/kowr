@@ -11,6 +11,8 @@ Description: This is the realm where the random chunks of code I use will
 License: MIT + file LICENSE
 URL: https://koderkow.github.io/kowr, https://github.com/KoderKow/kowr
 BugReports: https://github.com/KoderKow/kowr/issues
+Depends: 
+    R (>= 2.10)
 Imports: 
     clipr,
     dplyr,
@@ -28,6 +30,7 @@ Imports:
     xml2
 Suggests: 
     knitr,
+    markdown,
     png,
     readr,
     rmarkdown,
@@ -39,4 +42,5 @@ VignetteBuilder:
     knitr
 Encoding: UTF-8
 LazyData: true
+Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
