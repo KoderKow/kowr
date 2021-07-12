@@ -80,7 +80,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -94,7 +94,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/KoderKow/kowr/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -120,13 +120,13 @@
     <p>This is useful for when the user wants to use the columns in a presentation. Shiny, Power BI, and RMarkdown are use cases where we may want clean column names for the user to read.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>snake_to</span>(
-  <span class='no'>object</span>,
-  <span class='kw'>format</span> <span class='kw'>=</span> <span class='st'>"title"</span>,
-  <span class='kw'>acronyms</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>names_only</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>ggplot_title</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>
-)</pre>
+    <pre class="usage"><span class='fu'>snake_to</span><span class='op'>(</span>
+  <span class='va'>object</span>,
+  format <span class='op'>=</span> <span class='st'>"title"</span>,
+  acronyms <span class='op'>=</span> <span class='cn'>NULL</span>,
+  names_only <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  ggplot_title <span class='op'>=</span> <span class='cn'>FALSE</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -138,24 +138,24 @@
     <tr>
       <th>format</th>
       <td><p>A string. The desired target (default is "title") case with options including:</p><ul>
-<li><p>`"title"` produces title case</p></li>
-<li><p>`"lower"` produces lower case</p></li>
-<li><p>`"normal"` do not transform the string</p></li>
-<li><p>`"sentence"` produces sentence case</p></li>
-<li><p>`"upper"` produces upper case</p></li>
+<li><p><code>"title"</code> produces title case</p></li>
+<li><p><code>"lower"</code> produces lower case</p></li>
+<li><p><code>"normal"</code> do not transform the string</p></li>
+<li><p><code>"sentence"</code> produces sentence case</p></li>
+<li><p><code>"upper"</code> produces upper case</p></li>
 </ul></td>
     </tr>
     <tr>
       <th>acronyms</th>
-      <td><p>A Character. Default `NULL`. For when acronyms exist in the column names that need to be capitalized. Pass a character vector for when there is more than one acronym. Upper and/or lower case acronyms in this parameter will be accepted. This will only capitalize the wanted words, words that may contain the acronyms letter will NOT be capitalized.</p></td>
+      <td><p>A Character. Default <code>NULL</code>. For when acronyms exist in the column names that need to be capitalized. Pass a character vector for when there is more than one acronym. Upper and/or lower case acronyms in this parameter will be accepted. This will only capitalize the wanted words, words that may contain the acronyms letter will NOT be capitalized.</p></td>
     </tr>
     <tr>
       <th>names_only</th>
-      <td><p>A Logical. Default `FALSE`. If `TRUE`, `snake_to()` will return a vector of transformed column names.</p></td>
+      <td><p>A Logical. Default <code>FALSE</code>. If <code>TRUE</code>, <code>snake_to()</code> will return a vector of transformed column names.</p></td>
     </tr>
     <tr>
       <th>ggplot_title</th>
-      <td><p>A Logical. Default `FALSE`. If `TRUE`, `snake_to()` will add a title to the ggplot object that refelcts the clean X and Y axes.</p></td>
+      <td><p>A Logical. Default <code>FALSE</code>. If <code>TRUE</code>, <code>snake_to()</code> will add a title to the ggplot object that refelcts the clean X and Y axes.</p></td>
     </tr>
     </table>
 
@@ -164,24 +164,25 @@
     <p>Returns a data.frame with clean names, a ggplot object with clean axes, or a vector of clean strings.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
 <span class='co'># snake to title</span>
-<span class='no'>.data</span> <span class='kw'>%&gt;%</span>
-  <span class='fu'>snake_to</span>()
+<span class='va'>.data</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>snake_to</span><span class='op'>(</span><span class='op'>)</span>
 
 <span class='co'># snake to sentence</span>
-<span class='no'>.data</span> <span class='kw'>%&gt;%</span>
-  <span class='fu'>snake_to</span>(<span class='kw'>format</span> <span class='kw'>=</span> <span class='st'>"sentence"</span>)
+<span class='va'>.data</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>snake_to</span><span class='op'>(</span>format <span class='op'>=</span> <span class='st'>"sentence"</span><span class='op'>)</span>
 
 <span class='co'># snake to title, keep vector of transformed column names</span>
-<span class='no'>.data</span> <span class='kw'>%&gt;%</span>
-  <span class='fu'>snake_to</span>(<span class='kw'>names_only</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='va'>.data</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>snake_to</span><span class='op'>(</span>names_only <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
 
 <span class='co'># snake to title, capitalize acronyms</span>
-<span class='no'>acronyms</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"pyr"</span>, <span class='st'>"cyr"</span>)
-<span class='no'>.data</span> <span class='kw'>%&gt;%</span>
-  <span class='fu'>snake_to</span>(<span class='kw'>acronyms</span> <span class='kw'>=</span> <span class='no'>acronyms</span>)
-}</div></pre>
+<span class='va'>acronyms</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"pyr"</span>, <span class='st'>"cyr"</span><span class='op'>)</span>
+<span class='va'>.data</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>snake_to</span><span class='op'>(</span>acronyms <span class='op'>=</span> <span class='va'>acronyms</span><span class='op'>)</span>
+<span class='op'>}</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -197,7 +198,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

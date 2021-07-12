@@ -40,7 +40,7 @@
 
 
 <meta property="og:title" content="Backslash to Forward Slash — back_to_forward" />
-<meta property="og:description" content="This function is primary for windows users. When copying file paths on windows they will contain backslashes, &quot;\&quot;, which will throw an error in R because &quot;\&quot; is used for escape characters. Due to how R reads &quot;\&quot;, this function reads the filepath directly from the clipboard. The user can either run *back_to_forward()* in the console to get the path with forward slashes, or put *back_to_forward()* on a hotkey for instant posting within the script." />
+<meta property="og:description" content="This function is primary for windows users. When copying file paths on windows they will contain backslashes, &quot;\&quot;, which will throw an error in R because &quot;\&quot; is used for escape characters. Due to how R reads &quot;\&quot;, this function reads the filepath directly from the clipboard. The user can either run back_to_forward() in the console to get the path with forward slashes, or put back_to_forward() on a hotkey for instant posting within the script." />
 
 
 
@@ -80,7 +80,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -94,7 +94,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/KoderKow/kowr/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -117,10 +117,10 @@
     </div>
 
     <div class="ref-description">
-    <p>This function is primary for windows users. When copying file paths on windows they will contain backslashes, "\", which will throw an error in R because "\" is used for escape characters. Due to how R reads "\", this function reads the filepath directly from the clipboard. The user can either run *back_to_forward()* in the console to get the path with forward slashes, or put *back_to_forward()* on a hotkey for instant posting within the script.</p>
+    <p>This function is primary for windows users. When copying file paths on windows they will contain backslashes, "\", which will throw an error in R because "\" is used for escape characters. Due to how R reads "\", this function reads the filepath directly from the clipboard. The user can either run <em>back_to_forward()</em> in the console to get the path with forward slashes, or put <em>back_to_forward()</em> on a hotkey for instant posting within the script.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>back_to_forward</span>(<span class='kw'>text</span> <span class='kw'>=</span> <span class='kw pkg'>clipr</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/clipr/man/read_clip.html'>read_clip</a></span>(), <span class='kw'>render</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>back_to_forward</span><span class='op'>(</span>text <span class='op'>=</span> <span class='fu'>clipr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/clipr/man/read_clip.html'>read_clip</a></span><span class='op'>(</span><span class='op'>)</span>, render <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -131,7 +131,7 @@
     </tr>
     <tr>
       <th>render</th>
-      <td><p>A Logical. Defaults to `TRUE`. Exists primarily for the sake of internal testing.</p></td>
+      <td><p>A Logical. Defaults to <code>TRUE</code>. Exists primarily for the sake of internal testing.</p></td>
     </tr>
     </table>
 
@@ -140,14 +140,15 @@
     <p>A string. A file path that is compatible with R.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Primarily for Windows users. When copying file paths in Windows it will use a backslash to seperate files, this will throw an error in R. The process of manually changing the backslashe to forward slashes can get highly repetitive. The `back_to_forward()` function will take what is in the users clipboard and paste the path with the wanted forward slashes. There are two approaches to this; 1) run `back_to_forward()` in the console to retreive the string version with forward slashes of the path, or 2) Assign a hotkey to the addin `Back to Forward Slash`. Shout out to the `reprex` package for testing `clipr` methods.</p>
+    <p>Primarily for Windows users. When copying file paths in Windows it will use a backslash to seperate files, this will throw an error in R. The process of manually changing the backslashe to forward slashes can get highly repetitive. The <code>back_to_forward()</code> function will take what is in the users clipboard and paste the path with the wanted forward slashes. There are two approaches to this; 1) run <code>back_to_forward()</code> in the console to retreive the string version with forward slashes of the path, or 2) Assign a hotkey to the addin <code>Back to Forward Slash</code>. Shout out to the <code>reprex</code> package for testing <code>clipr</code> methods.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
 <span class='co'># Example path in clipboard:</span>
 <span class='co'># C:\Documents\Newsletters\Summer2018.csv</span>
-<span class='fu'>back_to_forward</span>()
-}</div></pre>
+<span class='fu'>back_to_forward</span><span class='op'>(</span><span class='op'>)</span>
+<span class='op'>}</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -163,7 +164,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
