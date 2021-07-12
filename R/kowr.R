@@ -1,5 +1,10 @@
 #' @keywords internal
 "_PACKAGE"
 
-## quiets concerns of R CMD check re: the .'s that appear in pipelines
-if (getRversion() >= "2.15.1") utils::globalVariables(c(".", ":=", "getFromNamespace", "help.search", "installed.packages", "median", "n", "p", "quantile", "sd"))
+if (getRversion() >= "2.15.1") {
+  utils::globalVariables(c(".", ":=", "getFromNamespace", "help.search", "installed.packages", "median", "n", "p", "quantile", "sd"))
+}
+
+# attachment::att_amend_desc(
+#   extra.suggests = attachment::att_from_rscripts("tests")
+# )

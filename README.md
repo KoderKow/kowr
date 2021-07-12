@@ -8,8 +8,7 @@
 [![Open Source Love
 svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 [![made-with-R](https://img.shields.io/badge/Made%20with-R-1f425f.svg)](https://www.r-project.org/)
-[![Travis build
-status](https://travis-ci.org/KoderKow/kowr.svg?branch=master)](https://travis-ci.org/KoderKow/kowr)
+[![R-CMD-check](https://github.com/KoderKow/kowr/workflows/R-CMD-check/badge.svg)](https://github.com/KoderKow/kowr/actions)
 [![Codecov test
 coverage](https://codecov.io/gh/KoderKow/kowr/branch/master/graph/badge.svg)](https://codecov.io/gh/KoderKow/kowr?branch=master)
 <!-- badges: end -->
@@ -36,8 +35,6 @@ devtools::install_github("KoderKow/kowr")
 ## Thanks To
 
   - Hadley’s [R Packages](http://r-pkgs.had.co.nz/) book
-  - The [tic](https://github.com/ropenscilabs/tic) package for the
-    easiest package setupever
   - The \`c(“[clipr](https://github.com/mdlincoln/clipr)”,
     “[datapasta](https://github.com/MilesMcBain/datapasta)”,
     “[reprex](https://github.com/tidyverse/reprex)”) packages for

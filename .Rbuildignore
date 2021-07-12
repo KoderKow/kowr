@@ -1,3 +1,5 @@
+^renv$
+^renv\.lock$
 ^kowr\.Rproj$
 ^\.Rproj\.user$
 ^LICENSE\.md$
@@ -5,3 +7,7 @@
 ^appveyor\.yml$
 ^tic\.R$
 ^README\.Rmd$
+^\.github$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$

@@ -6,11 +6,13 @@
 \alias{kowr-package}
 \title{kowr: Utility Functions}
 \description{
-This is the realm where the random chunks of code I use will live.
+This is the realm where the random chunks of code I use will
+    live.
 }
 \seealso{
 Useful links:
 \itemize{
+  \item \url{https://koderkow.github.io/kowr}
   \item \url{https://github.com/KoderKow/kowr}
   \item Report bugs at \url{https://github.com/KoderKow/kowr/issues}
 }
