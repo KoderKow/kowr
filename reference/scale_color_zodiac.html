@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Kow Color Scales — scale_color_kow • kowr</title>
+<title>Discrete zodiac colors — scale_color_zodiac • kowr</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Kow Color Scales — scale_color_kow" />
-<meta property="og:description" content="Kow Color Scales" />
+<meta property="og:title" content="Discrete zodiac colors — scale_color_zodiac" />
+<meta property="og:description" content="Discrete zodiac colors" />
 
 
 
@@ -111,86 +111,55 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Kow Color Scales</h1>
-    <small class="dont-index">Source: <a href='https://github.com/KoderKow/kowr/blob/master/R/theme_kow.R'><code>R/theme_kow.R</code></a></small>
-    <div class="hidden name"><code>scale_kow.Rd</code></div>
+    <h1>Discrete zodiac colors</h1>
+    <small class="dont-index">Source: <a href='https://github.com/KoderKow/kowr/blob/master/R/zodiac_sign.R'><code>R/zodiac_sign.R</code></a></small>
+    <div class="hidden name"><code>scale_color_zodiac.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Kow Color Scales</p>
+    <p>Discrete zodiac colors</p>
     </div>
 
-    <pre class="usage"><span class='fu'>scale_color_kow</span><span class='op'>(</span><span class='va'>...</span><span class='op'>)</span>
-
-<span class='fu'>scale_fill_kow</span><span class='op'>(</span><span class='va'>...</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>scale_color_zodiac</span><span class='op'>(</span><span class='va'>...</span>, use_factor_order <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>...</th>
-      <td><p>Arguments passed on to <code><a href='https://ggplot2.tidyverse.org/reference/discrete_scale.html'>discrete_scale</a></code></p><dl>
-    <dt><code>palette</code></dt><dd><p>A palette function that when called with a single integer
-argument (the number of levels in the scale) returns the values that
-they should take (e.g., <code><a href='https://scales.r-lib.org/reference/hue_pal.html'>scales::hue_pal()</a></code>).</p></dd>
-    <dt><code>breaks</code></dt><dd><p>One of:
-<ul>
-<li><p><code>NULL</code> for no breaks</p></li>
-<li><p><code><a href='https://ggplot2.tidyverse.org/reference/waiver.html'>waiver()</a></code> for the default breaks (the scale limits)</p></li>
-<li><p>A character vector of breaks</p></li>
-<li><p>A function that takes the limits as input and returns breaks
-as output</p></li>
-</ul></p></dd>
-    <dt><code>limits</code></dt><dd><p>One of:
-<ul>
-<li><p><code>NULL</code> to use the default scale values</p></li>
-<li><p>A character vector that defines possible values of the scale and their
-order</p></li>
-<li><p>A function that accepts the existing (automatic) values and returns
-new ones</p></li>
-</ul></p></dd>
-    <dt><code>drop</code></dt><dd><p>Should unused factor levels be omitted from the scale?
-The default, <code>TRUE</code>, uses the levels that appear in the data;
-<code>FALSE</code> uses all the levels in the factor.</p></dd>
-    <dt><code>na.translate</code></dt><dd><p>Unlike continuous scales, discrete scales can easily show
-missing values, and do so by default. If you want to remove missing values
-from a discrete scale, specify <code>na.translate = FALSE</code>.</p></dd>
-    <dt><code>scale_name</code></dt><dd><p>The name of the scale that should be used for error messages
-associated with this scale.</p></dd>
-    <dt><code>name</code></dt><dd><p>The name of the scale. Used as the axis or legend title. If
-<code><a href='https://ggplot2.tidyverse.org/reference/waiver.html'>waiver()</a></code>, the default, the name of the scale is taken from the first
-mapping used for that aesthetic. If <code>NULL</code>, the legend title will be
-omitted.</p></dd>
-    <dt><code>labels</code></dt><dd><p>One of:
-<ul>
-<li><p><code>NULL</code> for no labels</p></li>
-<li><p><code><a href='https://ggplot2.tidyverse.org/reference/waiver.html'>waiver()</a></code> for the default labels computed by the
-transformation object</p></li>
-<li><p>A character vector giving labels (must be same length as <code>breaks</code>)</p></li>
-<li><p>A function that takes the breaks as input and returns labels
-as output</p></li>
-</ul></p></dd>
-    <dt><code>expand</code></dt><dd><p>For position scales, a vector of range expansion constants used to add some
-padding around the data to ensure that they are placed some distance
-away from the axes. Use the convenience function <code><a href='https://ggplot2.tidyverse.org/reference/expansion.html'>expansion()</a></code>
-to generate the values for the <code>expand</code> argument. The defaults are to
-expand the scale by 5% on each side for continuous variables, and by
-0.6 units on each side for discrete variables.</p></dd>
-    <dt><code>guide</code></dt><dd><p>A function used to create a guide or its name. See
-<code><a href='https://ggplot2.tidyverse.org/reference/guides.html'>guides()</a></code> for more information.</p></dd>
-    <dt><code>position</code></dt><dd><p>For position scales, The position of the axis.
-<code>left</code> or <code>right</code> for y axes, <code>top</code> or <code>bottom</code> for x axes.</p></dd>
-    <dt><code>super</code></dt><dd><p>The super class to use for the constructed scale</p></dd>
-  
-</dl></td>
+      <td><p>Extra parameters to pass to <code><a href='https://ggplot2.tidyverse.org/reference/discrete_scale.html'>ggplot2::discrete_scale()</a></code> when <code>use_factor_order</code> is <code>FALSE</code> (default).</p></td>
+    </tr>
+    <tr>
+      <th>use_factor_order</th>
+      <td><p>A logical. If <code>TRUE</code>, this will assign colors based on how they match with the zodiac sign. If <code>FALSE</code> (default) then the colors will be used without looking for zodiac sign values.</p></td>
     </tr>
     </table>
 
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other colour kow: 
-<code><a href='kow_pallette.html'>kow_pallette</a>()</code></p></div>
-
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='va'>sample_dates</span> <span class='op'>%&gt;%</span>
+<span class='fu'>mutate</span><span class='op'>(</span>
+  zodiac_sign <span class='op'>=</span> <span class='fu'><a href='zodiac_sign.html'>zodiac_sign</a></span><span class='op'>(</span><span class='va'>date</span><span class='op'>)</span>
+<span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>ggplot</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>aes</span><span class='op'>(</span>
+    x <span class='op'>=</span> <span class='va'>x</span>,
+    y <span class='op'>=</span> <span class='va'>y</span>,
+    color <span class='op'>=</span> <span class='va'>zodiac_sign</span>
+  <span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_point</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>scale_color_zodiac</span><span class='op'>(</span>use_factor_order <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='error'>Error in ggplot(.): could not find function "ggplot"</span></div><div class='input'>
+<span class='va'>iris</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>ggplot</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>aes</span><span class='op'>(</span>
+    x <span class='op'>=</span> <span class='va'>Sepal.Length</span>,
+    y <span class='op'>=</span> <span class='va'>Sepal.Width</span>,
+    color <span class='op'>=</span> <span class='va'>Species</span>
+  <span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_point</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>scale_color_zodiac</span><span class='op'>(</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='error'>Error in ggplot(.): could not find function "ggplot"</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
