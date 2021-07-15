@@ -3,7 +3,7 @@ pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
   kowr: kowr.html
-last_built: 2021-07-15T20:41Z
+last_built: 2021-07-15T22:05Z
 urls:
   reference: https://koderkow.github.io/kowr/reference
   article: https://koderkow.github.io/kowr/articles
