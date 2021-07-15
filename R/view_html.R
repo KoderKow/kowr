@@ -8,7 +8,7 @@ view_rvest_session <- function(session) {
   ## Function Source: # https://adventuresindata.netlify.com/post/2018-01-17-viewing-rvest-sessions/
 
   ## Cast the session to character
-  stopifnot(class(session) == 'session')
+  stopifnot(class(session) == 'rvest_session')
 
   s_tree <- xml2::read_html(session)
   s_code <- as.character(s_tree)

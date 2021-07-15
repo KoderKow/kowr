@@ -1,4 +1,4 @@
-s <- rvest::html_session("https://google.com")
+s <- rvest::session("https://google.com")
 p <- s %>% xml2::read_html()
 
 test_that("view rvest session", {
