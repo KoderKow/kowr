@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Extract zodiac sign from date — zodiac_sign • kowr</title>
+<title>Zodiac signs roman order — zodiac_signs_roman_order • kowr</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Extract zodiac sign from date — zodiac_sign" />
-<meta property="og:description" content="Extract zodiac sign from date" />
+<meta property="og:title" content="Zodiac signs roman order — zodiac_signs_roman_order" />
+<meta property="og:description" content="Zodiac signs based on the roman calendar year, Mar - Feb." />
 
 
 
@@ -111,42 +111,25 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Extract zodiac sign from date</h1>
-    <small class="dont-index">Source: <a href='https://github.com/KoderKow/kowr/blob/master/R/zodiac_sign.R'><code>R/zodiac_sign.R</code></a></small>
-    <div class="hidden name"><code>zodiac_sign.Rd</code></div>
+    <h1>Zodiac signs roman order</h1>
+    <small class="dont-index">Source: <a href='https://github.com/KoderKow/kowr/blob/master/R/kowr-data.R'><code>R/kowr-data.R</code></a></small>
+    <div class="hidden name"><code>zodiac_signs_roman_order.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Extract zodiac sign from date</p>
+    <p>Zodiac signs based on the roman calendar year, Mar - Feb.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>zodiac_sign</span><span class='op'>(</span><span class='va'>date</span>, factor_order <span class='op'>=</span> <span class='st'>"roman"</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='va'>zodiac_signs_roman_order</span></pre>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>date</th>
-      <td><p>A character/date in "yyyy-mm-dd" format. If value is a character the functuin will run <code><a href='http://lubridate.tidyverse.org/reference/ymd.html'>lubridate::ymd()</a></code> on the <code>date</code> value.</p></td>
-    </tr>
-    <tr>
-      <th>factor_order</th>
-      <td><p>A character. Sort the factor levels by the following:</p><ul>
-<li><p>roman: roman calender; Aries first (Default)</p></li>
-<li><p>modern: modern calender; Capricorn first</p></li>
-<li><p>none: return the data as a character</p></li>
-</ul></td>
-    </tr>
-    </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A character value. The zodiac sign that relates to the given date</p>
+    <p>A vector of length 12.</p>
+    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>zodiac_sign</span><span class='op'>(</span><span class='st'>"2021-07-03"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] Cancer
-#&gt; 12 Levels: Aries Taurus Gemini Cancer Leo Virgo Libra Scorpio ... Pisces</div></pre>
+    <p><a href='https://github.com/KoderKow/kowr/blob/master/data-raw/zodiac.R'>https://github.com/KoderKow/kowr/blob/master/data-raw/zodiac.R</a></p>
+
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
