@@ -72,10 +72,10 @@ zodiac_factor_order <- function(x, factor_order = "roman") {
 #' @family zodiac
 #' @export
 zodiac_color_palette <- function() {
-  f <- zodiac_signs_colors
+  f <- zodiac_sign_colors
   names(f) <- NULL
   f <- scales::manual_pal(f)
-  attr(f, "max_n") <- length(zodiac_sign_colors)
+  attr(f, "max_n") <- length(f)
 
   return(f)
 }
@@ -91,7 +91,6 @@ zodiac_color_palette <- function() {
 #' library(ggplot2)
 #'
 #' ## Use colors that match with each zodiac sign
-#' ## sample_dates comes with the package to demonstrate adding zodiac symbols to dates in 2020, all dates from 2000-01-01 to 2000-12-31 are present
 #' p <-
 #'   sample_dates %>%
 #'   ## Sample 100 dates from 2020 to count
@@ -103,6 +102,7 @@ zodiac_color_palette <- function() {
 #'     fill = zodiac_sign
 #'   ) +
 #'   geom_bar() +
+#'   ## Set use_factor_order = TRUE
 #'   scale_fill_zodiac(use_factor_order = TRUE)
 #'
 #' ## Use the colors in the palette without zodiac signs
@@ -134,6 +134,10 @@ scale_fill_zodiac <- function(..., use_factor_order = FALSE) {
 #'
 #' @export
 #' @examples
+#' library(dplyr)
+#' library(ggplot2)
+#'
+#' ## Use colors that match with each zodiac sign
 #' sample_dates %>%
 #' mutate(
 #'   zodiac_sign = zodiac_sign(date)
@@ -145,8 +149,10 @@ scale_fill_zodiac <- function(..., use_factor_order = FALSE) {
 #'     color = zodiac_sign
 #'   ) +
 #'   geom_point() +
+#'   ## Set use_factor_order = TRUE
 #'   scale_color_zodiac(use_factor_order = TRUE)
 #'
+#' ## Use the colors in the palette without zodiac signs
 #' iris %>%
 #'   ggplot() +
 #'   aes(

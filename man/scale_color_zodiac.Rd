@@ -15,6 +15,10 @@ scale_color_zodiac(..., use_factor_order = FALSE)
 Discrete zodiac colors
 }
 \examples{
+library(dplyr)
+library(ggplot2)
+
+## Use colors that match with each zodiac sign
 sample_dates \%>\%
 mutate(
   zodiac_sign = zodiac_sign(date)
@@ -26,8 +30,10 @@ mutate(
     color = zodiac_sign
   ) +
   geom_point() +
+  ## Set use_factor_order = TRUE
   scale_color_zodiac(use_factor_order = TRUE)
 
+## Use the colors in the palette without zodiac signs
 iris \%>\%
   ggplot() +
   aes(

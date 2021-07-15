@@ -19,7 +19,6 @@ library(dplyr)
 library(ggplot2)
 
 ## Use colors that match with each zodiac sign
-## sample_dates comes with the package to demonstrate adding zodiac symbols to dates in 2020, all dates from 2000-01-01 to 2000-12-31 are present
 p <-
   sample_dates \%>\%
   ## Sample 100 dates from 2020 to count
@@ -31,6 +30,7 @@ p <-
     fill = zodiac_sign
   ) +
   geom_bar() +
+  ## Set use_factor_order = TRUE
   scale_fill_zodiac(use_factor_order = TRUE)
 
 ## Use the colors in the palette without zodiac signs
