@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Remove Snake Case — snake_to • kowr</title>
+<title>Round + Preserve the Sum — round_preserve_sum • kowr</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,14 @@
 
 
 
-<meta property="og:title" content="Remove Snake Case — snake_to" />
-<meta property="og:description" content="This is useful for when the user wants to use the columns in a presentation. Shiny, Power BI, and RMarkdown are use cases where we may want clean column names for the user to read." />
+<meta property="og:title" content="Round + Preserve the Sum — round_preserve_sum" />
+<meta property="og:description" content="
+
+Round down to the specified number of decimal places
+Order numbers by their remainder values
+Increment the specified decimal place of values with ‘k’ largest remainders, where ‘k’ is the number of values that must be incremented to preserve their rounded sum
+
+" />
 
 
 
@@ -111,68 +117,47 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Remove Snake Case</h1>
-    <small class="dont-index">Source: <a href='https://github.com/KoderKow/kowr/blob/master/R/snake_to.R'><code>R/snake_to.R</code></a></small>
-    <div class="hidden name"><code>snake_to.Rd</code></div>
+    <h1>Round + Preserve the Sum</h1>
+    <small class="dont-index">Source: <a href='https://github.com/KoderKow/kowr/blob/master/R/round_preserve_sum.R'><code>R/round_preserve_sum.R</code></a></small>
+    <div class="hidden name"><code>round_preserve_sum.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This is useful for when the user wants to use the columns in a presentation. Shiny, Power BI, and RMarkdown are use cases where we may want clean column names for the user to read.</p>
+    
+<ol>
+<li><p>Round down to the specified number of decimal places</p></li>
+<li><p>Order numbers by their remainder values</p></li>
+<li><p>Increment the specified decimal place of values with ‘k’ largest remainders, where ‘k’ is the number of values that must be incremented to preserve their rounded sum</p></li>
+</ol>
+
     </div>
 
-    <pre class="usage"><span class='fu'>snake_to</span><span class='op'>(</span><span class='va'>object</span>, format <span class='op'>=</span> <span class='st'>"title"</span>, acronyms <span class='op'>=</span> <span class='cn'>NULL</span>, names_only <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>round_preserve_sum</span><span class='op'>(</span><span class='va'>x</span>, digits <span class='op'>=</span> <span class='fl'>4</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>object</th>
-      <td><p>A data.frame, ggplot or character vector object. A data.frame will have transformed column names. A ggplot object will have transformed X and Y axes. A character vector will have clean character names.</p></td>
+      <th>x</th>
+      <td><p>A numeric vector to apply the algorithm to. This should be a proportion vector where all values equal 1.</p></td>
     </tr>
     <tr>
-      <th>format</th>
-      <td><p>A string. The desired target (default is "title") case with options including:</p><ul>
-<li><p><strong>title</strong>: produces title case</p></li>
-<li><p><strong>lower</strong>: produces lower case</p></li>
-<li><p><strong>normal</strong>: do not transform the string</p></li>
-<li><p><strong>sentence</strong>: produces sentence case</p></li>
-<li><p><strong>upper</strong>: produces upper case</p></li>
-</ul></td>
-    </tr>
-    <tr>
-      <th>acronyms</th>
-      <td><p>A Character. Default <code>NULL</code>. For when acronyms exist in the column names that need to be capitalized. Pass a character vector for when there is more than one acronym. Upper and/or lower case acronyms in this parameter will be accepted. This will only capitalize the wanted words, words that may contain the acronyms letter will NOT be capitalized.</p></td>
-    </tr>
-    <tr>
-      <th>names_only</th>
-      <td><p>A Logical. Default <code>FALSE</code>. If <code>TRUE</code>, <code>snake_to()</code> will return a vector of transformed column names.</p></td>
+      <th>digits</th>
+      <td><p>A numeric. Indicates the number of decimal places to be used.</p></td>
     </tr>
     </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>Returns a data.frame with clean names, a ggplot object with clean axes, or a vector of clean strings.</p>
+    <p>https://www.r-bloggers.com/2016/07/round-values-while-preserve-their-rounded-sum-in-r/</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
-<span class='co'># snake to title</span>
-<span class='va'>.data</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>snake_to</span><span class='op'>(</span><span class='op'>)</span>
-
-<span class='co'># snake to sentence</span>
-<span class='va'>.data</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>snake_to</span><span class='op'>(</span>format <span class='op'>=</span> <span class='st'>"sentence"</span><span class='op'>)</span>
-
-<span class='co'># snake to title, keep vector of transformed column names</span>
-<span class='va'>.data</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>snake_to</span><span class='op'>(</span>names_only <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
-
-<span class='co'># snake to title, capitalize acronyms</span>
-<span class='va'>acronyms</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"pyr"</span>, <span class='st'>"cyr"</span><span class='op'>)</span>
-<span class='va'>.data</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>snake_to</span><span class='op'>(</span>acronyms <span class='op'>=</span> <span class='va'>acronyms</span><span class='op'>)</span>
-<span class='op'>}</span>
-</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0.333</span>, <span class='fl'>0.333</span>, <span class='fl'>0.334</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 1</div><div class='input'>
+<span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/Round.html'>round</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0.333</span>, <span class='fl'>0.333</span>, <span class='fl'>0.334</span><span class='op'>)</span>, <span class='fl'>2</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 0.99</div><div class='input'>
+<span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='fu'>round_preserve_sum</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0.333</span>, <span class='fl'>0.333</span>, <span class='fl'>0.334</span><span class='op'>)</span>, <span class='fl'>2</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 1</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

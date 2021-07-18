@@ -304,7 +304,7 @@ figcaption {
 <div id="ggplot-titles" class="section level5">
 <h5 class="hasAnchor">
 <a href="#ggplot-titles" class="anchor"></a>ggplot titles:</h5>
-<p><code><a href="../reference/snake_to.html">snake_to()</a></code> will also clean up ggplot <em>x</em> and <em>y</em> axes. Pipe the saved ggplot object into <code><a href="../reference/snake_to.html">snake_to()</a></code> and it will clean up snake case titles. There is also an options for <code>ggplot_title</code>; when true this will create a title on the plot “Relation Between <em>x</em> and <em>y</em>”. If there is a legend the title will be capitalized using <code>str_to_title()</code>.</p>
+<p><code><a href="../reference/snake_to.html">snake_to()</a></code> will also clean up ggplot <em>x</em> and <em>y</em> axes. Pipe the saved ggplot object into <code><a href="../reference/snake_to.html">snake_to()</a></code> and it will clean up snake case titles. If there is a legend the title will be capitalized using <code>str_to_title()</code>.</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 
@@ -318,10 +318,6 @@ figcaption {
 <code class="sourceCode R">
 <span class="va">p</span> <span class="op">%&gt;%</span> <span class="fu"><a href="../reference/snake_to.html">snake_to</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p><img src="kowr_files/figure-html/unnamed-chunk-13-2.png" width="25%" style="display: block; margin: auto;"></p>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
-<code class="sourceCode R">
-<span class="va">p</span> <span class="op">%&gt;%</span> <span class="fu"><a href="../reference/snake_to.html">snake_to</a></span><span class="op">(</span>ggplot_title <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
-<p><img src="kowr_files/figure-html/unnamed-chunk-13-3.png" width="25%" style="display: block; margin: auto;"></p>
 </div>
 <div id="arguments-3" class="section level4">
 <h4 class="hasAnchor">
@@ -348,8 +344,6 @@ figcaption {
 <code>acronyms</code> A Character. Default <code>NULL</code>. For when acronyms exist in the column names that need to be capitalized. Pass a character vector for when there is more than one acronym. Upper and/or lower case acronyms in this parameter will be accepted. This will only capitalize the wanted words, words that may contain the acronyms letter will NOT be capitalized.</li>
 <li>
 <code>names_only</code> A Logical. Default <code>FALSE</code>. If <code>TRUE</code>, <code><a href="../reference/snake_to.html">snake_to()</a></code> will return a vector of transformed column names.</li>
-<li>
-<code>ggplot_title</code> A Logical. Default <code>FALSE</code>. If <code>TRUE</code>, <code><a href="../reference/snake_to.html">snake_to()</a></code> will add a title to the ggplot object that refelcts the clean X and Y axes.</li>
 </ul>
 </div>
 </div>

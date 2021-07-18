@@ -13,6 +13,9 @@
     <loc>https://koderkow.github.io/kowr/reference/back_to_forward.html</loc>
   </url>
   <url>
+    <loc>https://koderkow.github.io/kowr/reference/case_when_factor.html</loc>
+  </url>
+  <url>
     <loc>https://koderkow.github.io/kowr/reference/clean_ggplot_axis_numbers.html</loc>
   </url>
   <url>
@@ -34,19 +37,22 @@
     <loc>https://koderkow.github.io/kowr/reference/kowr-package.html</loc>
   </url>
   <url>
-    <loc>https://koderkow.github.io/kowr/reference/not_in_pipe.html</loc>
+    <loc>https://koderkow.github.io/kowr/reference/named_group_split.html</loc>
   </url>
   <url>
-    <loc>https://koderkow.github.io/kowr/reference/not_na.html</loc>
+    <loc>https://koderkow.github.io/kowr/reference/nested_list_to_tibble.html</loc>
+  </url>
+  <url>
+    <loc>https://koderkow.github.io/kowr/reference/parallel_prep.html</loc>
   </url>
   <url>
     <loc>https://koderkow.github.io/kowr/reference/pipe.html</loc>
   </url>
   <url>
-    <loc>https://koderkow.github.io/kowr/reference/quiet_pipe.html</loc>
+    <loc>https://koderkow.github.io/kowr/reference/reproducability_receipt.html</loc>
   </url>
   <url>
-    <loc>https://koderkow.github.io/kowr/reference/replace_null_pipe.html</loc>
+    <loc>https://koderkow.github.io/kowr/reference/round_preserve_sum.html</loc>
   </url>
   <url>
     <loc>https://koderkow.github.io/kowr/reference/round_up.html</loc>
@@ -70,7 +76,10 @@
     <loc>https://koderkow.github.io/kowr/reference/summarize_variable.html</loc>
   </url>
   <url>
-    <loc>https://koderkow.github.io/kowr/reference/theme_kow.html</loc>
+    <loc>https://koderkow.github.io/kowr/reference/url_exists.html</loc>
+  </url>
+  <url>
+    <loc>https://koderkow.github.io/kowr/reference/use_kowr_utils.html</loc>
   </url>
   <url>
     <loc>https://koderkow.github.io/kowr/reference/view_html.html</loc>
