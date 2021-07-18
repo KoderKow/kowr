@@ -18,7 +18,3 @@ test_that("scale_colour_gdocs works", {
 test_that("scale_color_gdocs works", {
   expect_equal(scale_color_kow(), scale_color_kow())
 })
-
-test_that("theme_gdocs works", {
-  expect_is(theme_kow(), "theme")
-})

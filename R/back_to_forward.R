@@ -30,4 +30,6 @@ back_to_forward <- function(text = clipr::read_clip(), render = TRUE) {
   } else {
     text
   }
+
+  return(invisible(text))
 }

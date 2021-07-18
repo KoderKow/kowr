@@ -14,10 +14,16 @@ BugReports: https://github.com/KoderKow/kowr/issues
 Depends: 
     R (>= 2.10)
 Imports: 
+    cli,
     clipr,
+    crayon,
     dplyr,
     forcats,
+    fs,
+    future,
     ggplot2,
+    glue,
+    httr,
     lubridate,
     magrittr,
     plotly,
@@ -26,6 +32,8 @@ Imports:
     rstudioapi,
     scales,
     stringr,
+    tibble,
+    tidyr,
     usethis,
     utils,
     xml2
@@ -33,11 +41,9 @@ Suggests:
     knitr,
     markdown,
     png,
-    readr,
     rmarkdown,
     rvest,
     testthat,
-    tibble,
     withr
 VignetteBuilder: 
     knitr

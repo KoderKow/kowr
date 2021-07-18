@@ -9,7 +9,6 @@
 #' @return A summarized tbl
 #' @export
 summarize_variable <- function(.data, .col, round = TRUE) {
-
   enquo_col <- rlang::enquo(.col)
 
   data_type <-
@@ -21,7 +20,6 @@ summarize_variable <- function(.data, .col, round = TRUE) {
 
   ## Numeric data type
   if (any(data_type %in% c("numeric", "integer", "Date", "POSIXct", "POSIXt"))) {
-
     res <- .data %>%
       dplyr::summarize(
         n        = dplyr::n(),
@@ -43,7 +41,7 @@ summarize_variable <- function(.data, .col, round = TRUE) {
         dplyr::select(-sd)
     }
 
-    if(round == TRUE) {
+    if (round == TRUE) {
       where <- getFromNamespace("where", "tidyselect")
 
       res <-

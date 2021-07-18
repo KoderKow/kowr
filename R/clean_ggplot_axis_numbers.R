@@ -6,7 +6,6 @@
 #' @param prefix A character. This will be the leading symbol of the final value. Example being a $ symbol.
 #' @export
 clean_ggplot_axis_numbers <- function(x, prefix = NULL) {
-
   clean_x <- x %>%
     gsub("\\,", "", .) %>%
     as.numeric()
@@ -21,11 +20,11 @@ clean_ggplot_axis_numbers <- function(x, prefix = NULL) {
 
   display_value <- round(clean_x / 10^(3 * (index - 1)), 2)
 
-  display_unit <- c("","K","M","B","T")[index]
+  display_unit <- c("", "K", "M", "B", "T")[index]
 
   final_display <- stringr::str_c(is_neg, display_value, display_unit)
 
-  if(!is.null(prefix)) final_display <- stringr::str_c(prefix, final_display)
+  if (!is.null(prefix)) final_display <- stringr::str_c(prefix, final_display)
 
   final_display
 }

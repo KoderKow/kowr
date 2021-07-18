@@ -77,7 +77,7 @@ test_that("test for inputing a non-option", {
 
 test_that("acronyms", {
   acronym_test <- dat %>%
-    snake_to(format = "normal", acronym = "lol", names_only = TRUE) %>%
+    snake_to(format = "normal", acronyms = "lol", names_only = TRUE) %>%
     paste(., collapse = " ")
   expect_equal(acronym_test, "LOL game lollipop thirdColumn")
 })
@@ -97,9 +97,4 @@ test_that("character vectors", {
 
 test_that("numeric vector error", {
   expect_error(c(1, 2, 3) %>% snake_to())
-})
-
-test_that("ggplot title", {
-  p <- p %>% snake_to(ggplot_title = TRUE)
-  expect_equal(p$labels$title, "Relation Between Lollipop and Lol Game")
 })

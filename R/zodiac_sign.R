@@ -50,13 +50,11 @@ zodiac_factor_order <- function(x, factor_order = "roman") {
       x = x,
       levels = c(zodiac_signs_roman_order, NA)
     )
-
   } else if (factor_order == "modern") {
     x <- factor(
       x = x,
       levels = c(zodiac_signs_modern_order, NA)
     )
-
   } else if (factor_order != "none") {
     stop("The value factor_order is not recognized.")
   }
@@ -139,9 +137,9 @@ scale_fill_zodiac <- function(..., use_factor_order = FALSE) {
 #'
 #' ## Use colors that match with each zodiac sign
 #' sample_dates %>%
-#' mutate(
-#'   zodiac_sign = zodiac_sign(date)
-#' ) %>%
+#'   mutate(
+#'     zodiac_sign = zodiac_sign(date)
+#'   ) %>%
 #'   ggplot() +
 #'   aes(
 #'     x = x,

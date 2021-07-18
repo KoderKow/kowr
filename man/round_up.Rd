@@ -26,7 +26,6 @@ Round a number up to the number place second to the left. This is useful for rep
 \dontrun{
 # Round a number up
 round_up(123456)
-
 # Number with only 2 numeric places:
 round_up(19, format = "dollar")
 }

@@ -26,7 +26,7 @@ lazy data frame (e.g. from dbplyr or dtplyr).}
 If omitted, it will default to \code{n}. If there's already a column called \code{n},
 it will error, and require you to specify the name.}
 
-\item{percent_format}{A logical. If \code{TRUE}, transform the numeric decimal into a readable percent of class character.}
+\item{percent_format}{A logical. If \code{TRUE}, transform the numeric decimal into a readable percent of class character as a new column; \verb{\{name\}_format}. If this parameter is missing it will default to the last column of the dataset passed in.}
 
 \item{percent_accuracy}{A numeric. If \code{percent_format} is \code{TRUE}, number to round the decimal to. Uses \code{scales::percent()} accuracy method for transformations.}
 }

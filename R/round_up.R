@@ -4,11 +4,9 @@
 #'
 #' @param x A numeric value.
 #' @param format A boolean. Takes three different options to round up and stylize:
-#' \itemize{
-#'   \item normal: The default, return the number with no formatting.
-#'   \item dollar: Return the number with a leading dollar sign along with commas.
-#'   \item comma: Return the number with commas.
-#' }
+#'   - normal: The default, return the number with no formatting.
+#'   - dollar: Return the number with a leading dollar sign along with commas.
+#'   - comma: Return the number with commas.
 #'
 #' @return A numeric, or a string if format is not "normal".
 #' @export
@@ -17,7 +15,6 @@
 #' \dontrun{
 #' # Round a number up
 #' round_up(123456)
-#'
 #' # Number with only 2 numeric places:
 #' round_up(19, format = "dollar")
 #' }

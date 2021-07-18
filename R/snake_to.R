@@ -4,16 +4,14 @@
 #'
 #' @param object A data.frame, ggplot or character vector object. A data.frame will have transformed column names. A ggplot object will have transformed X and Y axes. A character vector will have clean character names.
 #' @param format A string. The desired target (default is "title") case with options including:
-#' \itemize{
-#'  \item{`"title"` produces title case}
-#'  \item{`"lower"` produces lower case}
-#'  \item{`"normal"` do not transform the string}
-#'  \item{`"sentence"` produces sentence case}
-#'  \item{`"upper"` produces upper case}
-#'  }
+#'  - **title**: produces title case
+#'  - **lower**: produces lower case
+#'  - **normal**: do not transform the string
+#'  - **sentence**: produces sentence case
+#'  - **upper**: produces upper case
+#'
 #' @param acronyms A Character. Default `NULL`. For when acronyms exist in the column names that need to be capitalized. Pass a character vector for when there is more than one acronym. Upper and/or lower case acronyms in this parameter will be accepted. This will only capitalize the wanted words, words that may contain the acronyms letter will NOT be capitalized.
 #' @param names_only A Logical. Default `FALSE`. If `TRUE`, `snake_to()` will return a vector of transformed column names.
-#' @param ggplot_title A Logical. Default `FALSE`. If `TRUE`, `snake_to()` will add a title to the ggplot object that refelcts the clean X and Y axes.
 #'
 #' @return Returns a data.frame with clean names, a ggplot object with clean axes, or a vector of clean strings.
 #' @export
@@ -37,8 +35,7 @@
 #' .data %>%
 #'   snake_to(acronyms = acronyms)
 #' }
-snake_to <- function(object, format = "title", acronyms = NULL, names_only = FALSE, ggplot_title = FALSE) {
-
+snake_to <- function(object, format = "title", acronyms = NULL, names_only = FALSE) {
   if (names_only == TRUE & object_check(object, "ggplot")) {
     stop("names_only = TRUE and an object of class 'ggplot' cannot be used together.")
   }
@@ -49,10 +46,7 @@ snake_to <- function(object, format = "title", acronyms = NULL, names_only = FAL
         pattern = "_",
         replacement = " "
       )
-
   } else if (object_check(object, "ggplot")) {
-    # names_cleaned <- c(object$labels$x, object$labels$y) %>%
-    #   stringr::str_replace_all("_", " ")
     list_names <- names(object$labels)
 
     names_cleaned <- object$labels %>%
@@ -63,14 +57,12 @@ snake_to <- function(object, format = "title", acronyms = NULL, names_only = FAL
           replacement = " "
         )
       })
-
   } else if (object_check(object, "character_vector")) {
     names_cleaned <- object %>%
       stringr::str_replace_all(
         pattern = "_",
         replacement = " "
       )
-
   } else {
     stop("Object's class is not supported. Object's class needs to be a data.frame, ggplot or a character vector.")
   }
@@ -116,20 +108,13 @@ snake_to <- function(object, format = "title", acronyms = NULL, names_only = FAL
     names_cleaned
   } else if (object_check(object, "data.frame")) {
     names(object) <- names_cleaned
+
     object
   } else if (object_check(object, "ggplot")) {
     object$labels <- names_cleaned %>%
-      purrr::map(~ .x) %>%
+      purrr::map(~.x) %>%
       purrr::set_names(list_names)
 
-    if (ggplot_title) {
-      object$labels$title <- paste(
-        "Relation Between",
-        object$labels$x,
-        "and",
-        object$labels$y
-      )
-    }
     object
   }
 }

@@ -20,9 +20,9 @@ library(ggplot2)
 
 ## Use colors that match with each zodiac sign
 sample_dates \%>\%
-mutate(
-  zodiac_sign = zodiac_sign(date)
-) \%>\%
+  mutate(
+    zodiac_sign = zodiac_sign(date)
+  ) \%>\%
   ggplot() +
   aes(
     x = x,

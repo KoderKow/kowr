@@ -203,7 +203,7 @@ dat %>%
 
 ##### ggplot titles:
 
-`snake_to()` will also clean up ggplot *x* and *y* axes. Pipe the saved ggplot object into `snake_to()` and it will clean up snake case titles. There is also an options for `ggplot_title`; when true this will create a title on the plot "Relation Between *x* and *y*". If there is a legend the title will be capitalized using `str_to_title()`.
+`snake_to()` will also clean up ggplot *x* and *y* axes. Pipe the saved ggplot object into `snake_to()` and it will clean up snake case titles. If there is a legend the title will be capitalized using `str_to_title()`.
 
 ```{r, out.width="25%", fig.align="center"}
 library(ggplot2)
@@ -215,8 +215,6 @@ p <- dat %>%
 p
 
 p %>% snake_to()
-
-p %>% snake_to(ggplot_title = TRUE)
 ```
 
 #### Arguments
@@ -230,4 +228,3 @@ p %>% snake_to(ggplot_title = TRUE)
   - `"upper"` produces upper case
 - `acronyms` A Character. Default `NULL`. For when acronyms exist in the column names that need to be capitalized. Pass a character vector for when there is more than one acronym. Upper and/or lower case acronyms in this parameter will be accepted. This will only capitalize the wanted words, words that may contain the acronyms letter will NOT be capitalized.
 - `names_only` A Logical. Default `FALSE`. If `TRUE`, `snake_to()` will return a vector of transformed column names.
-- `ggplot_title` A Logical. Default `FALSE`. If `TRUE`, `snake_to()` will add a title to the ggplot object that refelcts the clean X and Y axes.

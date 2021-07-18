@@ -8,16 +8,16 @@ view_rvest_session <- function(session) {
   ## Function Source: # https://adventuresindata.netlify.com/post/2018-01-17-viewing-rvest-sessions/
 
   ## Cast the session to character
-  stopifnot(class(session) == 'rvest_session')
+  stopifnot(class(session) == "rvest_session")
 
   s_tree <- xml2::read_html(session)
   s_code <- as.character(s_tree)
 
   ## Make a temporary file, fill it with text
 
-  temp_file <- tempfile(fileext = '.html')
+  temp_file <- tempfile(fileext = ".html")
 
-  f <- file(temp_file, open = 'w')
+  f <- file(temp_file, open = "w")
 
   write(s_code, f)
 
@@ -44,9 +44,9 @@ view_html <- function(p) {
   p <- as.character(p)
 
   ## Make a temporary file, fill it with text
-  temp_file <- tempfile(fileext = '.html')
+  temp_file <- tempfile(fileext = ".html")
 
-  f <- file(temp_file, open = 'w')
+  f <- file(temp_file, open = "w")
   write(p, f)
   close(f)
   utils::browseURL(temp_file)
